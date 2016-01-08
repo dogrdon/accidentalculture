@@ -38,3 +38,24 @@ Other sources of videos:
 	- 
 
 
+###Examples
+
+http://api.dp.la/items/?q=cow&page_size=12&sourceResource.type=%22physical%20object%22&api_key=b2e5bb78379ad55ead9a148202c8e5fd
+
+http://api.dp.la/items/?q=cow&page_size=12&sourceResource.type=%22moving%20image%22&api_key=b2e5bb78379ad55ead9a148202c8e5fd
+
+
+###Grabbing videos
+
+Since a headless browser that supports flash doesn't seem to be a common tool, may need some hueristics. If there are only a handful of collections that actually have video, this might not be so bad. 
+
+WSB-TV collection: http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/{obj-id}.f4v
+archives.org appear to have a download button: a#downloadVideoAudio['href']
+mndigital.org (contentdm): http://reflections.mndigital.org/utils/getstream/collection/{collection-id}/id/{item-id} 
+texashistory.unt.edu: Ugh, really tucked away, jwplayer - won't work with youtube-dl
+utah-primoprod.hosted.exlibrisgroup.com: no streaming, but has a link to vimeo?
+libx.bsu.edu: cdm, but utils/getstream pattern above doesn't work (downloads blank .url file) and it only supports silverlight
+cdm16016.contentdm.oclc.org: utils/getstream downloads url to resource
+openvault.wgbh.org: appears to be behind authentication
+georgiaencyclopedia.org: video source['src']
+digital.lib.ecu.edu: video source[type="video/mp4"]['href']
