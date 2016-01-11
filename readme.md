@@ -1,3 +1,3 @@
-dpla/internet archive => ffmpeg => twitter
+dpla/internet archive/nypl => ffmpeg => twitter
 
-video audio mashup bot of our cultural heritage
+AV mashup bot for our cultural heritage
