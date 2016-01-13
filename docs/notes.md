@@ -50,12 +50,16 @@ http://api.dp.la/items/?q=cow&page_size=12&sourceResource.type=%22moving%20image
 Since a headless browser that supports flash doesn't seem to be a common tool, may need some hueristics. If there are only a handful of collections that actually have video, this might not be so bad. 
 
 WSB-TV collection: http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/{obj-id}.f4v
+  http://dp.la/api/contributor/georgia
 archives.org appear to have a download button: a#downloadVideoAudio['href']
+  http://dp.la/api/contributor/nara
 mndigital.org (contentdm): http://reflections.mndigital.org/utils/getstream/collection/{collection-id}/id/{item-id} 
 texashistory.unt.edu: Ugh, really tucked away, jwplayer - won't work with youtube-dl
-utah-primoprod.hosted.exlibrisgroup.com: no streaming, but has a link to vimeo?
+utah-primoprod.hosted.exlibrisgroup.com: no streaming, but has a link to vimeo? has a link to tons of places, might not be a great resource. for now.
+  http://dp.la/api/contributor/mwdl (are there more?)
 libx.bsu.edu: cdm, but utils/getstream pattern above doesn't work (downloads blank .url file) and it only supports silverlight
-cdm16016.contentdm.oclc.org: utils/getstream downloads url to resource
+cdm16016.contentdm.oclc.org: utils/getstream downloads url to resource ()
+  http://dp.la/api/contributor/scdl (are there more?)
 openvault.wgbh.org: appears to be behind authentication
 georgiaencyclopedia.org: video source['src']
 digital.lib.ecu.edu: video source[type="video/mp4"]['href']
