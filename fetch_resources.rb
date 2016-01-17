@@ -12,16 +12,18 @@ require 'cgi'
 require 'json'
 require_relative 'config/api_keys'
 
+__TERM__ = ARGV[0]
+__LIMIT__ = ARGV[1]
 
 #set up for api, search
-__APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS['dpla']}&%s"}
+__APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS[:dpla]}&%s"}
 
-__PATHS__ = {
+__VPATHS__ = {
 	"http://dp.la/api/contributor/georgia" => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v",
-	"http://dp.la/api/contributor/nara"	   => "",
-	""
-
+	"http://dp.la/api/contributor/nara"	   => ""
 }
+
+__APATHS__ = {}
 
 class Client
 
@@ -31,10 +33,16 @@ class Client
 
 	def clean_results(res)
 		data = JSON.parse(res)
-		docs = data['docs']
-		docs.each do |d|
-			puts d['provider']['name']
+		if data['count'] == 0
+			results = "no results"
+		else
+			docs = data['docs']
+			results = Hash.new
+			docs.each do |d|
+				results[d['provider']['@id']] = d['provider']['name']
+			end
 		end
+		puts results.inspect
 	end
 
 	def encode_params(params_hash)
@@ -50,6 +58,7 @@ class Client
 		@params_hash['page_size'] = limit.to_s
 		@params = encode_params @params_hash
 		url = @service % [@type, @params]
+		puts url
 		res = RestClient.get url
 	end
 
@@ -58,6 +67,6 @@ end
 
 if __FILE__ == $0
 	c = Client.new(__APIS__[:dpla])
-	video = c.clean_results c.search('mice', '"moving image"', 'items', 500)
-	audio = c.clean_results c.search('mice', 'sound', 'items', 500)
+	video = c.clean_results c.search(__TERM__, '"moving image"', 'items', __LIMIT__)
+	audio = c.clean_results c.search(__TERM__, 'sound', 'items', __LIMIT__)
 end
