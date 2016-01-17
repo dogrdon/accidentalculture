@@ -12,17 +12,27 @@ require 'cgi'
 require 'json'
 require_relative 'config/api_keys'
 
+if ARGV.empty?
+	puts "need to provide search term and number of results to limit page to. Put long search terms in quotes"
+	exit
+end
+
 __TERM__ = ARGV[0]
 __LIMIT__ = ARGV[1]
+
 
 #set up for api, search
 __APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS[:dpla]}&%s"}
 
 __VPATHS__ = {
-	"http://dp.la/api/contributor/georgia" => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v",
-	"http://dp.la/api/contributor/nara"	   => ""
+	#getUrl takes: returns: PARTIAL download URL with params and based on a specific URL patter.
+	#getSrc takes: returns: FULL download URL from HTML
+	#getCDM takes: original url returns: FULL download URL from CDM
+	"http://dp.la/api/contributor/georgia" => {:type => "getUrl", :next => false, :path => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v"}, 
+	"http://dp.la/api/contributor/indiana" => {:type => "getCDM", :next => false, :path => nil}, 
+	"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :next => false, :path => "a#downloadVideoAudio['href']"}, 
+	"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :next => false, :path =>  "video source[type='video/mp4']['href']"}
 }
-
 __APATHS__ = {}
 
 class Client
@@ -61,8 +71,6 @@ class Client
 		puts url
 		res = RestClient.get url
 	end
-
-
 end
 
 if __FILE__ == $0
