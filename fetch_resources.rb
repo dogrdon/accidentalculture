@@ -8,6 +8,7 @@ require 'rest-client'
 require 'nokogiri'
 require 'capybara/poltergeist'
 require 'optparse'
+require 'open-uri'
 require 'cgi'
 require 'json'
 require_relative 'config/api_keys'
@@ -47,9 +48,20 @@ class Client
 			results = "no results"
 		else
 			docs = data['docs']
-			results = Hash.new
+			results = Array.new
 			docs.each do |d|
-				results[d['provider']['@id']] = d['provider']['name']
+				result = Hash.new
+				result = {
+					:provider_id => d['provider']['@id'], 
+					:provider_name => d['provider']['name'],
+					:dl_info => __VPATHS__[d['provider']['@id']],
+					:source_resource => d['sourceResource'],
+					:dpla_id => d['id'],
+					:original_url => d['isShownAt']
+				}
+				results << result if !result[:dl_info].nil? 
+
+
 			end
 		end
 		puts results.inspect
@@ -73,8 +85,49 @@ class Client
 	end
 end
 
+def download_videos(v)
+	f = v[:dl_info][:type]
+
+	def download(url, someid)
+		path = "./tmp_v/#{someid}"
+		open(path, 'wb') do |f|
+  			f << open(url).read
+		end
+	end
+
+	#only one of these will get used for a v
+	#each one should return a url that is the direct resource location
+	def getUrl
+
+		url = something	
+		file_id = something_else
+		download url, file_id
+	end
+
+	def getCDM
+
+		url = something
+		download url, file_id
+	end
+
+	def getSrc
+
+		url = something
+		download url, file_id
+	end
+
+
+
+end
+
+
 if __FILE__ == $0
 	c = Client.new(__APIS__[:dpla])
-	video = c.clean_results c.search(__TERM__, '"moving image"', 'items', __LIMIT__)
-	audio = c.clean_results c.search(__TERM__, 'sound', 'items', __LIMIT__)
+	video_results = c.clean_results c.search(__TERM__, '"moving image"', 'items', __LIMIT__)
+	#audio = c.clean_results c.search(__TERM__, 'sound', 'items', __LIMIT__)
+
+	#here, video (and audio, soon) should be a list of potential sources with their relevant metadata
+	#so depending on which document.dl_info.type it has, go get the video
+	video_results.each{|v| download_video v}
+
 end
