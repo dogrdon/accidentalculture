@@ -59,7 +59,7 @@ class Client
 					:dpla_id => d['id'],
 					:original_url => d['isShownAt']
 				}
-				results << result if !result[:dl_info].nil? 
+				results << result if !result[:dl_info].nil? #&& result[:source_resource]['rights'][0].downcase == 'unrestricted'
 
 
 			end
@@ -98,7 +98,7 @@ def download_videos(v)
 	#only one of these will get used for a v
 	#each one should return a url that is the direct resource location
 	def getUrl
-
+		
 		url = something	
 		file_id = something_else
 		download url, file_id
