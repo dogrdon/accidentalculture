@@ -3,7 +3,7 @@
 /config
 /test/tmp/
 /test/version_tmp/
-/tmp/
+/tmp*/
 
 ## Environment normalization:
 /.bundle/

@@ -25,14 +25,14 @@ __LIMIT__ = ARGV[1]
 #set up for api, search
 __APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS[:dpla]}&%s"}
 
-__VPATHS__ = {
+$VPATHS = {
 	#getUrl takes: returns: PARTIAL download URL with params and based on a specific URL patter.
 	#getSrc takes: returns: FULL download URL from HTML
 	#getCDM takes: original url returns: FULL download URL from CDM
 	"http://dp.la/api/contributor/georgia" => {:type => "getUrl", :next => false, :path => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v"}, 
-	"http://dp.la/api/contributor/indiana" => {:type => "getCDM", :next => false, :path => nil}, 
-	"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :next => false, :path => "a#downloadVideoAudio['href']"}, 
-	"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :next => false, :path =>  "video source[type='video/mp4']['href']"}
+	"http://dp.la/api/contributor/indiana" => {:type => "getCDM", :next => false, :path => nil}
+	#,"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :next => false, :path => "a#downloadVideoAudio['href']"}
+	#,"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :next => false, :path =>  "video source[type='video/mp4']['href']"}
 }
 __APATHS__ = {}
 
@@ -54,17 +54,15 @@ class Client
 				result = {
 					:provider_id => d['provider']['@id'], 
 					:provider_name => d['provider']['name'],
-					:dl_info => __VPATHS__[d['provider']['@id']],
+					:dl_info => $VPATHS[d['provider']['@id']],
 					:source_resource => d['sourceResource'],
 					:dpla_id => d['id'],
 					:original_url => d['isShownAt']
 				}
 				results << result if !result[:dl_info].nil? #&& result[:source_resource]['rights'][0].downcase == 'unrestricted'
-
-
 			end
 		end
-		puts results.inspect
+		return results
 	end
 
 	def encode_params(params_hash)
@@ -86,7 +84,6 @@ class Client
 end
 
 def download_videos(v)
-	f = v[:dl_info][:type]
 
 	def download(url, someid)
 		path = "./tmp_v/#{someid}"
@@ -97,27 +94,27 @@ def download_videos(v)
 
 	#only one of these will get used for a v
 	#each one should return a url that is the direct resource location
-	def getUrl
-		
-		url = something	
-		file_id = something_else
+	def getUrl(v)
+		#this is pretty tied to `http://dp.la/api/contributor/georgia` right now
+		resid = v[:original_url].split('id:')[1]
+		url = v[:dl_info][:path] % resid
+		file_id = resid
 		download url, file_id
 	end
 
-	def getCDM
-
-		url = something
+	def getCDM(v)
+		file_id = v[:original_url].split('/')[-1]
+		url = v[:original_url].sub('cdm/ref', 'utils/getstream')
 		download url, file_id
 	end
 
-	def getSrc
-
-		url = something
-		download url, file_id
+	def getSrc(v)
+		#url = something
+		#download url, file_id
 	end
 
-
-
+	f = v[:dl_info][:type]
+	send(f, v)
 end
 
 
@@ -128,6 +125,6 @@ if __FILE__ == $0
 
 	#here, video (and audio, soon) should be a list of potential sources with their relevant metadata
 	#so depending on which document.dl_info.type it has, go get the video
-	video_results.each{|v| download_video v}
+	video_results.each{|v| download_videos v}
 
 end
