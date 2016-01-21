@@ -29,7 +29,7 @@ $VPATHS = {
 	#getUrl takes: returns: PARTIAL download URL with params and based on a specific URL patter.
 	#getSrc takes: returns: FULL download URL from HTML
 	#getCDM takes: original url returns: FULL download URL from CDM
-	"http://dp.la/api/contributor/georgia" => {:type => "getUrl", :next => false, :path => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v"}, 
+	"http://dp.la/api/contributor/georgia" => {:type => "getUrl", :next => false, :f4vpath => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v", :mp4path => "http://dlgmedia1-www.galib.uga.edu/gfc/mp4/%s.mp4"}, 
 	"http://dp.la/api/contributor/indiana" => {:type => "getCDM", :next => false, :path => nil}
 	#,"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :next => false, :path => "a#downloadVideoAudio['href']"}
 	#,"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :next => false, :path =>  "video source[type='video/mp4']['href']"}
@@ -88,7 +88,10 @@ def download_videos(v)
 	def download(url, someid)
 		path = "./tmp_v/#{someid}"
 		open(path, 'wb') do |f|
-  			f << open(url).read
+			dl = open(url)
+			ct = dl.content_type #if this is wrong on the server, it will be wrong here.
+			puts "#{url} is #{ct}" #for testing
+  			f << dl.read
 		end
 	end
 
@@ -96,13 +99,29 @@ def download_videos(v)
 	#each one should return a url that is the direct resource location
 	def getUrl(v)
 		#this is pretty tied to `http://dp.la/api/contributor/georgia` right now
-		resid = v[:original_url].split('id:')[1]
-		url = v[:dl_info][:path] % resid
-		file_id = resid
-		download url, file_id
+		start_url = v[:original_url]
+		resid = start_url.split(':')[-1]
+		if start_url.include? "id:"
+			url = v[:dl_info][:f4vpath] % resid
+			file_format = ".f4v"
+		elsif start_url.include? "do-mp4:"
+			url = v[:dl_info][:mp4path] % resid
+			file_format = ".mp4"
+		else
+			url = nil
+		end
+
+		file_id = resid << file_format if !resid.nil?
+		
+		if !url.nil?
+			download url, file_id
+		else
+			puts "no pattern for URL: #{start_url}"
+		end
 	end
 
 	def getCDM(v)
+		#need to check if there is actually a video downloaded or a url shortcut file (and parse the latter)
 		file_id = v[:original_url].split('/')[-1]
 		url = v[:original_url].sub('cdm/ref', 'utils/getstream')
 		download url, file_id

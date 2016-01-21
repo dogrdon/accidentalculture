@@ -60,6 +60,7 @@ Since a headless browser that supports flash doesn't seem to be a common tool, m
 
 WSB-TV collection - http://dlg.galileo.usg.edu/news/id:wsbn35848: http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/{obj-id}.f4v
   http://dp.la/api/contributor/georgia
+  New pattern: http://dlg.galileo.usg.edu/ugabma/gfc/do-mp4:gfc-2028 = http://dlgmedia1-www.galib.uga.edu/gfc/mp4/gfc-2028.mp4
 
 archives.org appear to have a download button: a#downloadVideoAudio['href']
   http://dp.la/api/contributor/nara
