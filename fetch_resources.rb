@@ -11,6 +11,7 @@ require 'optparse'
 require 'open-uri'
 require 'cgi'
 require 'json'
+require 'timeout'
 require_relative 'config/api_keys'
 
 if ARGV.empty?
@@ -30,11 +31,11 @@ $VPATHS = {
 	#getSrc takes: returns: FULL download URL from HTML
 	#getCDM takes: original url returns: FULL download URL from CDM
 	"http://dp.la/api/contributor/georgia" => {:type => "getUrl", :next => false, :f4vpath => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v", :mp4path => "http://dlgmedia1-www.galib.uga.edu/gfc/mp4/%s.mp4"}, 
-	"http://dp.la/api/contributor/indiana" => {:type => "getCDM", :next => false, :path => nil}
-	#,"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :next => false, :path => "a#downloadVideoAudio['href']"}
-	#,"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :next => false, :path =>  "video source[type='video/mp4']['href']"}
+	"http://dp.la/api/contributor/indiana" => {:type => "getCDM", :next => false, :path => nil},
+	"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :next => false, :path => "a#downloadVideoAudio", :sel => "['href']"},
+	"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :next => false, :path =>  "video source[type='video/mp4']", :sel =>"['href']"}
 }
-__APATHS__ = {}
+$APATHS = {}
 
 class Client
 
@@ -87,11 +88,18 @@ def download_videos(v)
 
 	def download(url, someid)
 		path = "./tmp_v/#{someid}"
-		open(path, 'wb') do |f|
-			dl = open(url)
-			ct = dl.content_type #if this is wrong on the server, it will be wrong here.
-			puts "#{url} is #{ct}" #for testing
-  			f << dl.read
+		#use timeout to cut of extra long downloads (over 2 min is too much)
+		begin
+			timeout(120) do
+				open(path, 'wb') do |f|
+					dl = open(url)
+					ct = dl.content_type #if this is wrong on the server, it will be wrong here.
+					puts "#{url} is #{ct}" #for testing
+		  			f << dl.read
+				end
+			end
+		rescue Timeout::Error
+			puts "#{url} is taking too long, probably way to large for our needs"
 		end
 	end
 
@@ -127,9 +135,14 @@ def download_videos(v)
 		download url, file_id
 	end
 
-	def getSrc(v)
-		#url = something
-		#download url, file_id
+	def getSrc(v) 
+		page = Nokogiri::HTML(open(v[:original_url]))
+		elem = page.css(v[:dl_info][:path])[v[:dl_info][:sel]]
+		file_id = url.split.('/')[-1]
+		if file_id.include?("?")
+			file_id = file_id.split("?")[0]!
+		end
+		download url, file_id
 	end
 
 	f = v[:dl_info][:type]
