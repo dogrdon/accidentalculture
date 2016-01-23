@@ -9,9 +9,12 @@ require 'nokogiri'
 require 'capybara/poltergeist'
 require 'optparse'
 require 'open-uri'
+require 'open_uri_redirections'
+require 'net/http' #for checking headers
 require 'cgi'
 require 'json'
 require 'timeout'
+
 require_relative 'config/api_keys'
 
 if ARGV.empty?
@@ -85,14 +88,27 @@ class Client
 end
 
 def download_videos(v)
+	def checkHeaders(u)
+		h = Net::HTTP.start(u)
+		r = h.head('/')
+		he = Hash.new
+		r.each { |k, v| he[k]=v}
+		h.finish
+		# need to return true or false if it's a video file or text file
+		#TODO, not getting any good information for the headers
+		if #video file
+			true
+		else
+			false	
+	end
 
 	def download(url, someid)
 		path = "./tmp_v/#{someid}"
-		#use timeout to cut of extra long downloads (over 2 min is too much)
+		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		begin
-			timeout(120) do
+			timeout(30) do
 				open(path, 'wb') do |f|
-					dl = open(url)
+					dl = open(url, :allow_redirections => :safe)
 					ct = dl.content_type #if this is wrong on the server, it will be wrong here.
 					puts "#{url} is #{ct}" #for testing
 		  			f << dl.read
@@ -129,10 +145,25 @@ def download_videos(v)
 	end
 
 	def getCDM(v)
+
+		# mov source = http://cdm16786.contentdm.oclc.org/utils/getstream/collection/filmarch/id/52
+		# ishortcut = http://libx.bsu.edu/utils/getstream/collection/newslink/id/592
+		def handleUrlShortcut(sc)
+			#sometimes you are given back a url shortcut text file, parse this to see if blank or has location
+			f = File.readlines(sc)
+			url = f.find {|e| /URL/ =~ e}.split('=')[1].strip
+		end
 		#need to check if there is actually a video downloaded or a url shortcut file (and parse the latter)
 		file_id = v[:original_url].split('/')[-1]
-		url = v[:original_url].sub('cdm/ref', 'utils/getstream')
-		download url, file_id
+		ourl = v[:original_url].sub('cdm/ref', 'utils/getstream')
+		proceed = checkHeaders ourl
+		url = !proceed ? url = handleUrlShortcut ourl : ourl
+
+		if url != 'about:blank'
+			download url, file_id
+		else
+			puts "forget it, we won't be able to download from #{ourl} "
+
 	end
 
 	def getSrc(v) 

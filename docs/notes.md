@@ -64,6 +64,7 @@ WSB-TV collection - http://dlg.galileo.usg.edu/news/id:wsbn35848: http://dlgmedi
 
 archives.org appear to have a download button: a#downloadVideoAudio['href']
   http://dp.la/api/contributor/nara
+  nara hasView['@id'] goes straigt to media resource? if hasView['format'] is 
 
 mndigital.org (contentdm): http://reflections.mndigital.org/utils/getstream/collection/{collection-id}/id/{item-id} 
 
