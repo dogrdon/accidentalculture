@@ -89,17 +89,24 @@ end
 
 def download_videos(v)
 	def checkHeaders(u)
-		h = Net::HTTP.start(u)
-		r = h.head('/')
-		he = Hash.new
-		r.each { |k, v| he[k]=v}
-		h.finish
-		# need to return true or false if it's a video file or text file
-		#TODO, not getting any good information for the headers
-		if #video file
-			true
-		else
-			false	
+		
+		uri = URI.parse(u)
+		http = Net::HTTP.new(uri.host, uri.port)
+		req = Net::HTTP::Get.new(uri.request_uri)
+		res = http.request(req)
+		ct = res.content_type	
+		b = res.body
+
+		#this check could be infinitely better.
+		status = Hash.new
+		if ct.include?('video')
+			status[:ok] = true
+			status[:with] = nil
+		elsif ct.include?('application')
+			status[:ok] = false
+			status[:with] = b
+		end
+		return status	
 	end
 
 	def download(url, someid)
@@ -150,20 +157,22 @@ def download_videos(v)
 		# ishortcut = http://libx.bsu.edu/utils/getstream/collection/newslink/id/592
 		def handleUrlShortcut(sc)
 			#sometimes you are given back a url shortcut text file, parse this to see if blank or has location
-			f = File.readlines(sc)
+			f = sc.lines
 			url = f.find {|e| /URL/ =~ e}.split('=')[1].strip
+
 		end
+		
 		#need to check if there is actually a video downloaded or a url shortcut file (and parse the latter)
 		file_id = v[:original_url].split('/')[-1]
 		ourl = v[:original_url].sub('cdm/ref', 'utils/getstream')
 		proceed = checkHeaders ourl
-		url = !proceed ? url = handleUrlShortcut ourl : ourl
+		url = proceed[:ok] == false ? handleUrlShortcut(proceed[:with]) : ourl
 
-		if url != 'about:blank'
+		if url != 'about:blank' && !url.nil?
 			download url, file_id
 		else
-			puts "forget it, we won't be able to download from #{ourl} "
-
+			puts "forget it, we won't be able to download from #{ourl}...moving on."
+		end
 	end
 
 	def getSrc(v) 
@@ -171,7 +180,7 @@ def download_videos(v)
 		elem = page.css(v[:dl_info][:path])[v[:dl_info][:sel]]
 		file_id = url.split.('/')[-1]
 		if file_id.include?("?")
-			file_id = file_id.split("?")[0]!
+			file_id = file_id.split("?")[0]
 		end
 		download url, file_id
 	end
@@ -189,5 +198,4 @@ if __FILE__ == $0
 	#here, video (and audio, soon) should be a list of potential sources with their relevant metadata
 	#so depending on which document.dl_info.type it has, go get the video
 	video_results.each{|v| download_videos v}
-
 end
