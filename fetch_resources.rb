@@ -10,7 +10,7 @@ require 'capybara/poltergeist'
 require 'optparse'
 require 'open-uri'
 require 'open_uri_redirections'
-require 'net/http' #for checking headers
+require 'net/http' 
 require 'cgi'
 require 'json'
 require 'timeout'
@@ -63,6 +63,7 @@ class Client
 					:dpla_id => d['id'],
 					:original_url => d['isShownAt']
 				}
+				#might look bad to ignore restrictions, but a cursory glance didn't appear to impose any crazy rights, at least according to what is in dpla
 				results << result if !result[:dl_info].nil? #&& result[:source_resource]['rights'][0].downcase == 'unrestricted'
 			end
 		end
@@ -85,6 +86,10 @@ class Client
 		puts url
 		res = RestClient.get url
 	end
+end
+
+def download_audio(a)
+
 end
 
 def download_videos(v)
@@ -192,10 +197,10 @@ end
 
 if __FILE__ == $0
 	c = Client.new(__APIS__[:dpla])
-	video_results = c.clean_results c.search(__TERM__, '"moving image"', 'items', __LIMIT__)
-	#audio = c.clean_results c.search(__TERM__, 'sound', 'items', __LIMIT__)
+	#video_results = c.clean_results c.search(__TERM__, '"moving image"', 'items', __LIMIT__)
+	audio_results = c.clean_results c.search(__TERM__, 'sound', 'items', __LIMIT__)
 
 	#here, video (and audio, soon) should be a list of potential sources with their relevant metadata
 	#so depending on which document.dl_info.type it has, go get the video
-	video_results.each{|v| download_videos v}
+	#video_results.each{|v| download_videos v}c
 end
