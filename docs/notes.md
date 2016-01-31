@@ -103,8 +103,26 @@ http://cdm16786.contentdm.oclc.org/cdm/ref/collection/filmarch/id/63 - utils/get
 http://libx.bsu.edu/cdm/ref/collection/newslink/id/442 - cdm, utils/getstream
   http://dp.la/api/contributor/indiana
 
-###Transcripts
 
+###Grabbing Audio
+
+This one probably not much good to pursue - it's contentdm tucked inside of primo
+http://utah-primoprod.hosted.exlibrisgroup.com/primo_library/libweb/action/dlDisplay.do?vid=MWDL&afterPDS=true&docId=digcoll_uuu_11wss/2582
+  http://dp.la/api/contributor/mwdl
+
+http://libx.bsu.edu/cdm/ref/collection/INArtsDesk/id/148 - video#MediaElement source['src'] (just a video element?)
+  http://dp.la/api/contributor/indiana
+
+http://digitalcollections.library.gsu.edu/cdm/ref/collection/ggdp/id/5371 - strange, it appears that /utils/getstream/ ought to work, but there is some wierd network stuff going on behind the scene.
+  http://dp.la/api/contributor/georgia
+
+http://dlg.galileo.usg.edu/gtaa/do-mp3:gtaa97-6-01 - http://dlg.galileo.usg.edu/gsac/gtaa/mp3s/gtaa97-6-01.mp3
+  http://dp.la/api/contributor/georgia
+
+http://libcdm1.uncg.edu/u?/ui,53359 - redirects to: http://libcdm1.uncg.edu/cdm/ref/collection/ui/id/53359 utils/getstream works
+  http://dp.la/api/contributor/digitalnc
+
+###Transcripts
 
 ###Puzzling
 http://dp.la/api/items/25669406978981f38a89568b63ce0dc2#sourceResource - landing page for a collection
