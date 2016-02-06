@@ -126,3 +126,28 @@ http://libcdm1.uncg.edu/u?/ui,53359 - redirects to: http://libcdm1.uncg.edu/cdm/
 
 ###Puzzling
 http://dp.la/api/items/25669406978981f38a89568b63ce0dc2#sourceResource - landing page for a collection
+
+
+###Parsing the giant 5gb data dump
+
+stream to jq with : 
+`gzip -dc all.json.gz | jq --stream ...`
+
+jq path: 
+`.[]._source.sourceResource.type`
+
+
+For something like Empire State Digital network, 49.6mb, takes about 28 - 30 second real time:
+`time gzip -dc esdn.json.gz | jq '.[] | select(._source.sourceResource.type=="sound")'`
+
+But we want to get all possible types first to make sure we are'nt missing something.
+`gzip -dc esdn.json.gz | jq '.[]._source.sourceResource.type' >> esdn_types.txt
+
+* some are arrays, some are strings, some are null. 
+
+Will these kill our memory?
+`time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="sound")'`
+`time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="moving image")'`
+
+
+

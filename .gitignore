@@ -4,6 +4,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp*/
+/data/
 
 ## Environment normalization:
 /.bundle/
