@@ -1,0 +1,2160 @@
+[
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7298842",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7298842",
+         "dataProvider":"National Archives at College Park - Still Pictures",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/207-dp/207-DP-9093A/207-DP-9093A-SI3428.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/207-dp/207-DP-9093A/207-DP-9093A-SI3428_t.jpg",
+         "ingestionSequence":5,
+         "id":"cecdeb79e2dd94f08d175745be59f906",
+         "_rev":"1-74ae5424d3550d55d3893a2db917bdf2",
+         "ingestDate":"2014-01-19T11:03:34.523270",
+         "_id":"nara--7298842",
+         "sourceResource":{
+            "title":"Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters",
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters, 10/12/2005 - 10/12/2005",
+               "Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+            ],
+            "format":[
+               "Optical Disk: Compact Disk",
+               "Magnetic Disk"
+            ],
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "date":{
+               "displayDate":"10/12/2005",
+               "end":"2005-10-12",
+               "begin":"2005-10-12"
+            },
+            "type":"image",
+            "identifier":[
+               "Agency-Assigned Identifier",
+               "7298842"
+            ],
+            "creator":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters"
+            }
+         },
+         "ingestType":"item",
+         "@id":"http://dp.la/api/items/cecdeb79e2dd94f08d175745be59f906",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/6/2013 9:22:30",
+            "local-identifier-desc":"207-DP-9093A-SI3428.jpg",
+            "variant-control-numbers":{
+               "variant-control-number":{
+                  "mlr":"false",
+                  "variant-type":"Agency-Assigned Identifier",
+                  "num":"1"
+               }
+            },
+            "indexable-dates":{
+               "date-range":"[g_x64_31, b_x4_501, g_x2_1004, g_x128_15, g_x4_502, g_x32_62, g_x16_125, g_x4_500, b_x1_2008, g_x2_1000, b_x2_1001, g_x8_250, g_x8_251, b_x1_2001]"
+            },
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "title-date":"10/12/2005",
+            "parent":{
+               "parent-id":"7298836",
+               "parent-title":"Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters, 10/12/2005 - 10/12/2005",
+               "parent-lod":"File Unit"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "arc-id-desc":"7298842",
+            "physical-occurrences":{
+               "physical-occurrence":[
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "summary":"true",
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Reproduction-Reference",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "process":"Magnetic Media/Optical Disk: Digital",
+                           "num":"1",
+                           "media-type":"Optical Disk: Compact Disk"
+                        }
+                     }
+                  },
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Preservation",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "num":"1",
+                           "media-type":"Magnetic Disk"
+                        }
+                     }
+                  }
+               ]
+            },
+            "creators":{
+               "creator":{
+                  "summary":"true",
+                  "creator-record-type":"ORG",
+                  "creator-display":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 - )",
+                  "num":"1",
+                  "standard":"Y",
+                  "creator-id":"1211613",
+                  "creator-type":"Most Recent"
+               }
+            },
+            "title-only":"Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters",
+            "title":"Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters",
+            "production-dates":{
+               "production-date":"10/12/2005"
+            },
+            "scope-content-note":"The original finding aid described this photograph as:\n\nEvent: Swearing-in Ceremony for Assistant Secretary Keith Nelson\n\nSubject Description: Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters.\n\nPhotographer: Ronald T. Bennett",
+            "_id":"7298842",
+            "arc-id":"7298842",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"207",
+               "parent-control-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+            },
+            "edited-timestamp":"[g_x64_247, g_x16_988, g_x32_494, g_x2_7909, g_x4_3954, g_x8_1977, b_x1_15818, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"7298836",
+                     "hierarchy-item-lod":"File Unit",
+                     "hierarchy-item-title":"Swearing-in Ceremony for Assistant Secretary Keith Nelson - Secretary Alphonso Jackson swearing in Keith Nelson as Assistant Secretary for Administration, at HUD Headquarters, 10/12/2005 - 10/12/2005"
+                  },
+                  {
+                     "hierarchy-item-id":"6002366",
+                     "hierarchy-item-inclusive-dates":"2001 - 2008",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+                  },
+                  {
+                     "hierarchy-item-id":"534",
+                     "hierarchy-item-record-group-number":"207",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9093A/207-DP-9093A-SI3428_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"4245275",
+                  "file-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9093A/207-DP-9093A-SI3428.jpg"
+               }
+            },
+            "local-identifier":"207-DP-9093A-SI3428.jpg"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7298917",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7298917",
+         "dataProvider":"National Archives at College Park - Still Pictures",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/207-dp/207-DP-9097/207-DP-9097-DSC_0046.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/207-dp/207-DP-9097/207-DP-9097-DSC_0046_t.jpg",
+         "ingestionSequence":5,
+         "id":"eb193bfeb786d9bb1a12e83153a4e8b1",
+         "_rev":"1-836fbe605e93012c113cc805fa4b7177",
+         "ingestDate":"2014-01-19T19:22:56.822853",
+         "_id":"nara--7298917",
+         "sourceResource":{
+            "title":"60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday",
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday, 09/08/2005 - 09/08/2005",
+               "Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+            ],
+            "format":[
+               "Optical Disk: Compact Disk",
+               "Magnetic Disk"
+            ],
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "date":{
+               "displayDate":"09/08/2005",
+               "end":"2005-09-08",
+               "begin":"2005-09-08"
+            },
+            "type":"image",
+            "identifier":[
+               "Agency-Assigned Identifier",
+               "7298917"
+            ],
+            "creator":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday"
+            }
+         },
+         "ingestType":"item",
+         "@id":"http://dp.la/api/items/eb193bfeb786d9bb1a12e83153a4e8b1",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/6/2013 11:58:44",
+            "local-identifier-desc":"207-DP-9097-DSC_0046.jpg",
+            "variant-control-numbers":{
+               "variant-control-number":{
+                  "mlr":"false",
+                  "variant-type":"Agency-Assigned Identifier",
+                  "num":"1"
+               }
+            },
+            "indexable-dates":{
+               "date-range":"[g_x64_31, b_x4_501, g_x2_1004, g_x128_15, g_x4_502, g_x32_62, g_x16_125, g_x4_500, b_x1_2008, g_x2_1000, b_x2_1001, g_x8_250, g_x8_251, b_x1_2001]"
+            },
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "title-date":"09/08/2005",
+            "parent":{
+               "parent-id":"7298887",
+               "parent-title":"60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday, 09/08/2005 - 09/08/2005",
+               "parent-lod":"File Unit"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "arc-id-desc":"7298917",
+            "physical-occurrences":{
+               "physical-occurrence":[
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "summary":"true",
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Reproduction-Reference",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "process":"Magnetic Media/Optical Disk: Digital",
+                           "num":"1",
+                           "media-type":"Optical Disk: Compact Disk"
+                        }
+                     }
+                  },
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Preservation",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "num":"1",
+                           "media-type":"Magnetic Disk"
+                        }
+                     }
+                  }
+               ]
+            },
+            "creators":{
+               "creator":{
+                  "summary":"true",
+                  "creator-record-type":"ORG",
+                  "creator-display":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 - )",
+                  "num":"1",
+                  "standard":"Y",
+                  "creator-id":"1211613",
+                  "creator-type":"Most Recent"
+               }
+            },
+            "title-only":"60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday",
+            "title":"60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday",
+            "production-dates":{
+               "production-date":"09/08/2005"
+            },
+            "scope-content-note":"The original finding aid described this photograph as:\n\nEvent: 60th Birthday Event for Secretary Alphonso Jackson\n\nEvent Date: Taken 9/08/2005; Copied 10/14/2005\n\nSubject Description: Celebration marking Secretary Alphonso Jackson's 60th birthday.\n\nPhotographer: [Staff Photo--probably by  Ronald T. Bennett]",
+            "_id":"7298917",
+            "arc-id":"7298917",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"207",
+               "parent-control-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+            },
+            "edited-timestamp":"[g_x64_247, g_x16_988, g_x32_494, g_x2_7909, g_x4_3954, g_x8_1977, b_x1_15818, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"7298887",
+                     "hierarchy-item-lod":"File Unit",
+                     "hierarchy-item-title":"60th Birthday Event for Secretary Alphonso Jackson - Celebration marking Secretary Alphonso Jackson's 60th birthday, 09/08/2005 - 09/08/2005"
+                  },
+                  {
+                     "hierarchy-item-id":"6002366",
+                     "hierarchy-item-inclusive-dates":"2001 - 2008",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+                  },
+                  {
+                     "hierarchy-item-id":"534",
+                     "hierarchy-item-record-group-number":"207",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9097/207-DP-9097-DSC_0046_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"1447795",
+                  "file-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9097/207-DP-9097-DSC_0046.jpg"
+               }
+            },
+            "local-identifier":"207-DP-9097-DSC_0046.jpg"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7298114",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7298114",
+         "dataProvider":"National Archives at College Park - Still Pictures",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/207-dp/207-DP-9073/207-DP-9073-PA3067.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/207-dp/207-DP-9073/207-DP-9073-PA3067_t.jpg",
+         "ingestionSequence":5,
+         "id":"54da9e7d69a90c5bdc3cb82c675ae80f",
+         "_rev":"1-f493b011211475c691c6f3dc6d33b679",
+         "ingestDate":"2014-01-19T18:42:07.275906",
+         "_id":"nara--7298114",
+         "sourceResource":{
+            "title":"Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters",
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters, 09/21/2005 - 09/21/2005",
+               "Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+            ],
+            "format":[
+               "Optical Disk: Compact Disk",
+               "Magnetic Disk"
+            ],
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "date":{
+               "displayDate":"09/21/2005",
+               "end":"2005-09-21",
+               "begin":"2005-09-21"
+            },
+            "type":"image",
+            "identifier":[
+               "7298114",
+               "Agency-Assigned Identifier"
+            ],
+            "creator":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters"
+            }
+         },
+         "ingestType":"item",
+         "@id":"http://dp.la/api/items/54da9e7d69a90c5bdc3cb82c675ae80f",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/5/2013 23:36:44",
+            "local-identifier-desc":"207-DP-9073-PA3067.jpg",
+            "variant-control-numbers":{
+               "variant-control-number":{
+                  "mlr":"false",
+                  "variant-type":"Agency-Assigned Identifier",
+                  "num":"1"
+               }
+            },
+            "indexable-dates":{
+               "date-range":"[g_x64_31, b_x4_501, g_x2_1004, g_x128_15, g_x4_502, g_x32_62, g_x16_125, g_x4_500, b_x1_2008, g_x2_1000, b_x2_1001, g_x8_250, g_x8_251, b_x1_2001]"
+            },
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "title-date":"09/21/2005",
+            "parent":{
+               "parent-id":"7298054",
+               "parent-title":"Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters, 09/21/2005 - 09/21/2005",
+               "parent-lod":"File Unit"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "arc-id-desc":"7298114",
+            "physical-occurrences":{
+               "physical-occurrence":[
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "summary":"true",
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Reproduction-Reference",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "process":"Magnetic Media/Optical Disk: Digital",
+                           "num":"1",
+                           "media-type":"Optical Disk: Compact Disk"
+                        }
+                     }
+                  },
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Preservation",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "num":"1",
+                           "media-type":"Magnetic Disk"
+                        }
+                     }
+                  }
+               ]
+            },
+            "creators":{
+               "creator":{
+                  "summary":"true",
+                  "creator-record-type":"ORG",
+                  "creator-display":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 - )",
+                  "num":"1",
+                  "standard":"Y",
+                  "creator-id":"1211613",
+                  "creator-type":"Most Recent"
+               }
+            },
+            "title-only":"Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters",
+            "title":"Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters",
+            "production-dates":{
+               "production-date":"09/21/2005"
+            },
+            "scope-content-note":"The original finding aid described this photograph as:\n\nEvent: Secretary Alphonso Jackson with HUD Regional Public Affairs Officers\n\nSubject Description: Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters.\n\nPhotographer: Ronald T. Bennett",
+            "_id":"7298114",
+            "arc-id":"7298114",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"207",
+               "parent-control-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+            },
+            "edited-timestamp":"[g_x64_247, g_x16_988, g_x32_494, g_x2_7909, g_x4_3954, g_x8_1977, g_x128_123, b_x1_15819]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"7298054",
+                     "hierarchy-item-lod":"File Unit",
+                     "hierarchy-item-title":"Secretary Alphonso Jackson with HUD Regional Public Affairs Officers - Secretary Alphonso Jackson meeting with HUD Regional Public Affairs Officers at HUD Headquarters, 09/21/2005 - 09/21/2005"
+                  },
+                  {
+                     "hierarchy-item-id":"6002366",
+                     "hierarchy-item-inclusive-dates":"2001 - 2008",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+                  },
+                  {
+                     "hierarchy-item-id":"534",
+                     "hierarchy-item-record-group-number":"207",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9073/207-DP-9073-PA3067_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"4156241",
+                  "file-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9073/207-DP-9073-PA3067.jpg"
+               }
+            },
+            "local-identifier":"207-DP-9073-PA3067.jpg"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7110565",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7110565",
+         "dataProvider":"National Archives and Records Administration",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/095-gp/801-900/Box0882/5192/95-GP-5192-Box0882_026_001_AC.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/095-gp/801-900/Box0882/5192/95-GP-5192-Box0882_026_001_AC_t.jpg",
+         "ingestionSequence":5,
+         "id":"5e0b6ef191f862e538810ac8bff56324",
+         "_rev":"1-5b64e2a8e5feeb08f94ebda019c34d05",
+         "ingestDate":"2014-01-19T10:38:26.744336",
+         "_id":"nara--7110565",
+         "sourceResource":{
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, ca. 1897 - ca. 1980"
+            ],
+            "title":"Road Construction - Oregon",
+            "collection":{
+               "id":"c1112670b59c011053639c6face94284",
+               "title":"Records of the Forest Service, 1870 - 2008",
+               "@id":"http://dp.la/api/collections/c1112670b59c011053639c6face94284"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "type":"image",
+            "creator":"Department of Agriculture. Forest Service.\t(07/01/1905 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Road Construction - Oregon"
+            }
+         },
+         "@id":"http://dp.la/api/items/5e0b6ef191f862e538810ac8bff56324",
+         "ingestType":"item",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/5/2013 13:41:46",
+            "local-identifier-desc":"95-GP-5192-340734",
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "indexable-dates":{
+               "date-range":"[b_x4_494, b_x4_475, b_x16_122, g_x64_30, b_x8_246, b_x1_1897, b_x16_119, g_x128_14, g_x8_237, g_x2_948, b_x2_949, g_x32_59, b_x1_1980, b_x32_60, g_x128_15, g_x4_474, g_x16_118, g_x32_61, g_x4_495, g_x2_990, g_x16_123, g_x64_29, g_x8_247]"
+            },
+            "parent":{
+               "parent-id":"651890",
+               "parent-title":"Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, compiled ca. 1897 - ca. 1980",
+               "parent-lod":"Series"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"c1112670b59c011053639c6face94284",
+               "title":"Records of the Forest Service, 1870 - 2008",
+               "@id":"http://dp.la/api/collections/c1112670b59c011053639c6face94284"
+            },
+            "arc-id-desc":"7110565",
+            "physical-occurrences":{
+               "physical-occurrence":{
+                  "copy-status":"Preservation-Reference",
+                  "media-occurrences":{
+                     "media-occurrence":{
+                        "num":"1",
+                        "container-id":"882",
+                        "media-type":"Photographic Print"
+                     }
+                  },
+                  "reference-units":{
+                     "reference-unit":{
+                        "summary":"true",
+                        "phone":"301-837-0561",
+                        "num":"1",
+                        "fax":"301-837-3621",
+                        "email":"stillpixorder@nara.gov",
+                        "name":"National Archives at College Park - Still Pictures",
+                        "mailcode":"RD-DC-S",
+                        "state":"MD",
+                        "address1":"National Archives at College Park",
+                        "address2":"8601 Adelphi Road",
+                        "ref-id":"31",
+                        "postcode":"20740-6001",
+                        "city":"College Park"
+                     }
+                  }
+               }
+            },
+            "creators":{
+               "creator":[
+                  {
+                     "summary":"true",
+                     "creator-display":"Department of Agriculture. Forest Service.\t(07/01/1905 - )",
+                     "num":"1",
+                     "standard":"Y",
+                     "creator-type":"Most Recent",
+                     "creator-record-type":"ORG",
+                     "creator-id":"1181639"
+                  },
+                  {
+                     "creator-display":"Department of Agriculture. Bureau of Forestry.\t (07/01/1901 - 07/01/1905)",
+                     "num":"2",
+                     "standard":"Y",
+                     "creator-type":"Predecessor",
+                     "creator-record-type":"ORG",
+                     "creator-id":"1181641"
+                  }
+               ]
+            },
+            "title-only":"Road Construction - Oregon",
+            "title":"Road Construction - Oregon",
+            "_id":"7110565",
+            "arc-id":"7110565",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"95",
+               "parent-control-title":"Records of the Forest Service, 1870 - 2008"
+            },
+            "edited-timestamp":"[g_x8_1969, g_x2_7878, g_x64_246, g_x16_984, b_x1_15757, g_x4_3939, g_x32_492, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"651890",
+                     "hierarchy-item-inclusive-dates":"ca. 1897 - ca. 1980",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, ca. 1897 - ca. 1980"
+                  },
+                  {
+                     "hierarchy-item-id":"424",
+                     "hierarchy-item-record-group-number":"95",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"Records of the Forest Service, 1870 - 2008"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/095-gp/801-900/Box0882/5192/95-GP-5192-Box0882_026_001_AC_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"2673383",
+                  "file-url":"http://media.nara.gov/stillpix/095-gp/801-900/Box0882/5192/95-GP-5192-Box0882_026_001_AC.jpg"
+               }
+            },
+            "local-identifier":"95-GP-5192-340734"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7298001",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7298001",
+         "dataProvider":"National Archives at College Park - Still Pictures",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/207-dp/207-DP-9068/207-DP-9068-DSC_3372.JPG"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/207-dp/207-DP-9068/207-DP-9068-DSC_3372_t.JPG",
+         "ingestionSequence":5,
+         "id":"2fc1ba43e514e153495e647aee0e512c",
+         "_rev":"1-18e50f64ea89ece200f62979e64b2f2a",
+         "ingestDate":"2014-01-19T16:21:10.573049",
+         "_id":"nara--7298001",
+         "sourceResource":{
+            "title":"Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C",
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C., 09/14/2005 - 09/14/2005",
+               "Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+            ],
+            "format":[
+               "Optical Disk: Compact Disk",
+               "Magnetic Disk"
+            ],
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "date":{
+               "displayDate":"09/14/2005",
+               "end":"2005-09-14",
+               "begin":"2005-09-14"
+            },
+            "type":"image",
+            "creator":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C"
+            }
+         },
+         "ingestType":"item",
+         "@id":"http://dp.la/api/items/2fc1ba43e514e153495e647aee0e512c",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/5/2013 20:23:25",
+            "local-identifier-desc":"207-DP-9068-DSC_3372.JPG",
+            "indexable-dates":{
+               "date-range":"[g_x64_31, b_x4_501, g_x2_1004, g_x128_15, g_x4_502, g_x32_62, g_x16_125, g_x4_500, b_x1_2008, g_x2_1000, b_x2_1001, g_x8_250, g_x8_251, b_x1_2001]"
+            },
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "title-date":"09/14/2005",
+            "parent":{
+               "parent-id":"7297959",
+               "parent-title":"Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C., 09/14/2005 - 09/14/2005",
+               "parent-lod":"File Unit"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "arc-id-desc":"7298001",
+            "physical-occurrences":{
+               "physical-occurrence":[
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "summary":"true",
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Reproduction-Reference",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "process":"Magnetic Media/Optical Disk: Digital",
+                           "num":"1",
+                           "media-type":"Optical Disk: Compact Disk"
+                        }
+                     }
+                  },
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Preservation",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "num":"1",
+                           "media-type":"Magnetic Disk"
+                        }
+                     }
+                  }
+               ]
+            },
+            "creators":{
+               "creator":{
+                  "summary":"true",
+                  "creator-record-type":"ORG",
+                  "creator-display":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 - )",
+                  "num":"1",
+                  "standard":"Y",
+                  "creator-id":"1211613",
+                  "creator-type":"Most Recent"
+               }
+            },
+            "title-only":"Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C.",
+            "title":"Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C.",
+            "production-dates":{
+               "production-date":"09/14/2005"
+            },
+            "scope-content-note":"The original finding aid described this photograph as:\n\nEvent: Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony\n\nSubject Description: Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C.\n\nPhotographer: Ricardo Vargas",
+            "_id":"7298001",
+            "arc-id":"7298001",
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"207",
+               "parent-control-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+            },
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "edited-timestamp":"[g_x64_247, g_x16_988, g_x32_494, g_x2_7909, g_x4_3954, g_x8_1977, g_x128_123, b_x1_15819]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"7297959",
+                     "hierarchy-item-lod":"File Unit",
+                     "hierarchy-item-title":"Secretary Alphonso Jackson at Historically Black Colleges and Universities Awards Ceremony - Secretary Alphonso Jackson presenting Historically Black Colleges and Universities (HBCU) Awards, Hyatt Regency Hotel, Washington, D.C., 09/14/2005 - 09/14/2005"
+                  },
+                  {
+                     "hierarchy-item-id":"6002366",
+                     "hierarchy-item-inclusive-dates":"2001 - 2008",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+                  },
+                  {
+                     "hierarchy-item-id":"534",
+                     "hierarchy-item-record-group-number":"207",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9068/207-DP-9068-DSC_3372_t.JPG",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"3058699",
+                  "file-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9068/207-DP-9068-DSC_3372.JPG"
+               }
+            },
+            "local-identifier":"207-DP-9068-DSC_3372.JPG"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7298861",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7298861",
+         "dataProvider":"National Archives at College Park - Still Pictures",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/207-dp/207-DP-9093C/207-DP-9093C-SI3433.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/207-dp/207-DP-9093C/207-DP-9093C-SI3433_t.jpg",
+         "ingestionSequence":5,
+         "id":"cb17bffad3e1efdda33434b0c122ac62",
+         "_rev":"1-c5204733659c48647e82bc1e8f6d59e7",
+         "ingestDate":"2014-01-19T18:42:15.904712",
+         "_id":"nara--7298861",
+         "sourceResource":{
+            "title":"Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters",
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters, 10/12/2005 - 10/12/2005",
+               "Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+            ],
+            "format":[
+               "Optical Disk: Compact Disk",
+               "Magnetic Disk"
+            ],
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "date":{
+               "displayDate":"10/12/2005",
+               "end":"2005-10-12",
+               "begin":"2005-10-12"
+            },
+            "type":"image",
+            "identifier":[
+               "7298861",
+               "Agency-Assigned Identifier"
+            ],
+            "creator":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters"
+            }
+         },
+         "ingestType":"item",
+         "@id":"http://dp.la/api/items/cb17bffad3e1efdda33434b0c122ac62",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/6/2013 2:52:36",
+            "local-identifier-desc":"207-DP-9093C-SI3433.jpg",
+            "variant-control-numbers":{
+               "variant-control-number":{
+                  "mlr":"false",
+                  "variant-type":"Agency-Assigned Identifier",
+                  "num":"1"
+               }
+            },
+            "indexable-dates":{
+               "date-range":"[g_x64_31, b_x4_501, g_x2_1004, g_x128_15, g_x4_502, g_x32_62, g_x16_125, g_x4_500, b_x1_2008, g_x2_1000, b_x2_1001, g_x8_250, g_x8_251, b_x1_2001]"
+            },
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "title-date":"10/12/2005",
+            "parent":{
+               "parent-id":"7298853",
+               "parent-title":"Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters, 10/12/2005 - 10/12/2005",
+               "parent-lod":"File Unit"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "arc-id-desc":"7298861",
+            "physical-occurrences":{
+               "physical-occurrence":[
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "summary":"true",
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Reproduction-Reference",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "process":"Magnetic Media/Optical Disk: Digital",
+                           "num":"1",
+                           "media-type":"Optical Disk: Compact Disk"
+                        }
+                     }
+                  },
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Preservation",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "num":"1",
+                           "media-type":"Magnetic Disk"
+                        }
+                     }
+                  }
+               ]
+            },
+            "creators":{
+               "creator":{
+                  "summary":"true",
+                  "creator-record-type":"ORG",
+                  "creator-display":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 - )",
+                  "num":"1",
+                  "standard":"Y",
+                  "creator-id":"1211613",
+                  "creator-type":"Most Recent"
+               }
+            },
+            "title-only":"Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters",
+            "title":"Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters",
+            "production-dates":{
+               "production-date":"10/12/2005"
+            },
+            "scope-content-note":"The original finding aid described this photograph as:\n\nEvent: Swearing-in Ceremony for Assistant Secretary Kim Kendrick\n\nSubject Description: Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters.\n\nPhotographer: Ronald T. Bennett",
+            "_id":"7298861",
+            "arc-id":"7298861",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"207",
+               "parent-control-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+            },
+            "edited-timestamp":"[g_x64_247, g_x16_988, g_x32_494, g_x2_7909, g_x4_3954, g_x8_1977, b_x1_15818, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"7298853",
+                     "hierarchy-item-lod":"File Unit",
+                     "hierarchy-item-title":"Swearing-in Ceremony for Assistant Secretary Kim Kendrick - Secretary Alphonso Jackson swearing in Kim Kendrick as Assistant Secretary for Fair Housing and Equal Opportunity, at HUD Headquarters, 10/12/2005 - 10/12/2005"
+                  },
+                  {
+                     "hierarchy-item-id":"6002366",
+                     "hierarchy-item-inclusive-dates":"2001 - 2008",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+                  },
+                  {
+                     "hierarchy-item-id":"534",
+                     "hierarchy-item-record-group-number":"207",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9093C/207-DP-9093C-SI3433_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"4012939",
+                  "file-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9093C/207-DP-9093C-SI3433.jpg"
+               }
+            },
+            "local-identifier":"207-DP-9093C-SI3433.jpg"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7110534",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7110534",
+         "dataProvider":"National Archives and Records Administration",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/095-gp/801-900/Box0881/5190/95-GP-5190-Box0881_061_001_AC.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/095-gp/801-900/Box0881/5190/95-GP-5190-Box0881_061_001_AC_t.jpg",
+         "ingestionSequence":5,
+         "id":"46da7b4e9bd9d11d30fb826832639dae",
+         "_rev":"1-df807efeb170b6bd537f2831b7921857",
+         "ingestDate":"2014-01-19T15:46:57.112037",
+         "_id":"nara--7110534",
+         "sourceResource":{
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, ca. 1897 - ca. 1980"
+            ],
+            "title":"Road Construction - North Carolina",
+            "collection":{
+               "id":"c1112670b59c011053639c6face94284",
+               "title":"Records of the Forest Service, 1870 - 2008",
+               "@id":"http://dp.la/api/collections/c1112670b59c011053639c6face94284"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "type":"image",
+            "creator":"Department of Agriculture. Forest Service.\t(07/01/1905 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Road Construction - North Carolina"
+            }
+         },
+         "@id":"http://dp.la/api/items/46da7b4e9bd9d11d30fb826832639dae",
+         "ingestType":"item",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/5/2013 16:56:46",
+            "local-identifier-desc":"95-GP-5190-504000",
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "indexable-dates":{
+               "date-range":"[b_x4_494, b_x4_475, b_x16_122, g_x64_30, b_x8_246, b_x1_1897, b_x16_119, g_x128_14, g_x8_237, g_x2_948, b_x2_949, g_x32_59, b_x1_1980, b_x32_60, g_x128_15, g_x4_474, g_x16_118, g_x32_61, g_x4_495, g_x2_990, g_x16_123, g_x64_29, g_x8_247]"
+            },
+            "parent":{
+               "parent-id":"651890",
+               "parent-title":"Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, compiled ca. 1897 - ca. 1980",
+               "parent-lod":"Series"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"c1112670b59c011053639c6face94284",
+               "title":"Records of the Forest Service, 1870 - 2008",
+               "@id":"http://dp.la/api/collections/c1112670b59c011053639c6face94284"
+            },
+            "arc-id-desc":"7110534",
+            "physical-occurrences":{
+               "physical-occurrence":{
+                  "copy-status":"Preservation-Reference",
+                  "media-occurrences":{
+                     "media-occurrence":{
+                        "num":"1",
+                        "container-id":"881",
+                        "media-type":"Photographic Print"
+                     }
+                  },
+                  "reference-units":{
+                     "reference-unit":{
+                        "summary":"true",
+                        "phone":"301-837-0561",
+                        "num":"1",
+                        "fax":"301-837-3621",
+                        "email":"stillpixorder@nara.gov",
+                        "name":"National Archives at College Park - Still Pictures",
+                        "mailcode":"RD-DC-S",
+                        "state":"MD",
+                        "address1":"National Archives at College Park",
+                        "address2":"8601 Adelphi Road",
+                        "ref-id":"31",
+                        "postcode":"20740-6001",
+                        "city":"College Park"
+                     }
+                  }
+               }
+            },
+            "creators":{
+               "creator":[
+                  {
+                     "summary":"true",
+                     "creator-display":"Department of Agriculture. Forest Service.\t(07/01/1905 - )",
+                     "num":"1",
+                     "standard":"Y",
+                     "creator-type":"Most Recent",
+                     "creator-record-type":"ORG",
+                     "creator-id":"1181639"
+                  },
+                  {
+                     "creator-display":"Department of Agriculture. Bureau of Forestry.\t (07/01/1901 - 07/01/1905)",
+                     "num":"2",
+                     "standard":"Y",
+                     "creator-type":"Predecessor",
+                     "creator-record-type":"ORG",
+                     "creator-id":"1181641"
+                  }
+               ]
+            },
+            "title-only":"Road Construction - North Carolina",
+            "title":"Road Construction - North Carolina",
+            "_id":"7110534",
+            "arc-id":"7110534",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"95",
+               "parent-control-title":"Records of the Forest Service, 1870 - 2008"
+            },
+            "edited-timestamp":"[g_x8_1969, g_x2_7878, g_x64_246, g_x16_984, b_x1_15757, g_x4_3939, g_x32_492, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"651890",
+                     "hierarchy-item-inclusive-dates":"ca. 1897 - ca. 1980",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, ca. 1897 - ca. 1980"
+                  },
+                  {
+                     "hierarchy-item-id":"424",
+                     "hierarchy-item-record-group-number":"95",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"Records of the Forest Service, 1870 - 2008"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/095-gp/801-900/Box0881/5190/95-GP-5190-Box0881_061_001_AC_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"2689060",
+                  "file-url":"http://media.nara.gov/stillpix/095-gp/801-900/Box0881/5190/95-GP-5190-Box0881_061_001_AC.jpg"
+               }
+            },
+            "local-identifier":"95-GP-5190-504000"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7298830",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7298830",
+         "dataProvider":"National Archives at College Park - Still Pictures",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/207-dp/207-DP-9093/207-DP-9093-DSC_3452.JPG"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/207-dp/207-DP-9093/207-DP-9093-DSC_3452_t.JPG",
+         "ingestionSequence":5,
+         "id":"43370c5c0dbda707c2affcf17069cf11",
+         "_rev":"1-98fc94d5d3b577137bb939f3ae8d4d85",
+         "ingestDate":"2014-01-19T16:20:37.750245",
+         "_id":"nara--7298830",
+         "sourceResource":{
+            "title":"Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters",
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters, 09/08/2005 - 09/08/2005",
+               "Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+            ],
+            "format":[
+               "Optical Disk: Compact Disk",
+               "Magnetic Disk"
+            ],
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "date":{
+               "displayDate":"09/08/2005",
+               "end":"2005-09-08",
+               "begin":"2005-09-08"
+            },
+            "type":"image",
+            "identifier":[
+               "Agency-Assigned Identifier",
+               "7298830"
+            ],
+            "creator":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters"
+            }
+         },
+         "ingestType":"item",
+         "@id":"http://dp.la/api/items/43370c5c0dbda707c2affcf17069cf11",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/6/2013 2:52:43",
+            "local-identifier-desc":"207-DP-9093-DSC_3452.JPG",
+            "variant-control-numbers":{
+               "variant-control-number":{
+                  "mlr":"false",
+                  "variant-type":"Agency-Assigned Identifier",
+                  "num":"1"
+               }
+            },
+            "indexable-dates":{
+               "date-range":"[g_x64_31, b_x4_501, g_x2_1004, g_x128_15, g_x4_502, g_x32_62, g_x16_125, g_x4_500, b_x1_2008, g_x2_1000, b_x2_1001, g_x8_250, g_x8_251, b_x1_2001]"
+            },
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "title-date":"09/08/2005",
+            "parent":{
+               "parent-id":"7298822",
+               "parent-title":"Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters, 09/08/2005 - 09/08/2005",
+               "parent-lod":"File Unit"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"462e58cd93dbe72b3898aaa797a0db60",
+               "title":"General Records of the Department of Housing and Urban Development, 1931 - 2003",
+               "@id":"http://dp.la/api/collections/462e58cd93dbe72b3898aaa797a0db60"
+            },
+            "arc-id-desc":"7298830",
+            "physical-occurrences":{
+               "physical-occurrence":[
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "summary":"true",
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Reproduction-Reference",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "process":"Magnetic Media/Optical Disk: Digital",
+                           "num":"1",
+                           "media-type":"Optical Disk: Compact Disk"
+                        }
+                     }
+                  },
+                  {
+                     "reference-units":{
+                        "reference-unit":{
+                           "num":"1",
+                           "phone":"301-837-0561",
+                           "fax":"301-837-3621",
+                           "email":"stillpixorder@nara.gov",
+                           "mailcode":"RD-DC-S",
+                           "name":"National Archives at College Park - Still Pictures",
+                           "state":"MD",
+                           "address1":"National Archives at College Park",
+                           "address2":"8601 Adelphi Road",
+                           "ref-id":"31",
+                           "postcode":"20740-6001",
+                           "city":"College Park"
+                        }
+                     },
+                     "copy-status":"Preservation",
+                     "media-occurrences":{
+                        "media-occurrence":{
+                           "num":"1",
+                           "media-type":"Magnetic Disk"
+                        }
+                     }
+                  }
+               ]
+            },
+            "creators":{
+               "creator":{
+                  "summary":"true",
+                  "creator-record-type":"ORG",
+                  "creator-display":"Department of Housing and Urban Development. Office of Administrative and Management Services. Multimedia Division. Publications Branch. Multimedia Library,\n\t(2000 - )",
+                  "num":"1",
+                  "standard":"Y",
+                  "creator-id":"1211613",
+                  "creator-type":"Most Recent"
+               }
+            },
+            "title-only":"Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters",
+            "title":"Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters",
+            "production-dates":{
+               "production-date":"09/08/2005"
+            },
+            "scope-content-note":"The original finding aid described this photograph as:\n\nEvent: Swearing-in Ceremony for Assistant Secretaries\n\nSubject Description: Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters.\n\nPhotographer: Ronald T. Bennett",
+            "_id":"7298830",
+            "arc-id":"7298830",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"207",
+               "parent-control-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+            },
+            "edited-timestamp":"[g_x64_247, g_x16_988, g_x32_494, g_x2_7909, g_x4_3954, g_x8_1977, b_x1_15818, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"7298822",
+                     "hierarchy-item-lod":"File Unit",
+                     "hierarchy-item-title":"Swearing-in Ceremony for Assistant Secretaries - Secretary Alphonso Jackson, staff at swearing-in proceedings for Keith Nelson (Assistant Secretary for Administration), Darlene Williams (Assistant Secretary for Policy Development and Research), Kim Kendrick (Assistant Secretary for Fair Housing and Equal Opportunity), and Keith Gottfried (General Counsel), HUD Headquarters, 09/08/2005 - 09/08/2005"
+                  },
+                  {
+                     "hierarchy-item-id":"6002366",
+                     "hierarchy-item-inclusive-dates":"2001 - 2008",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Documenting the Secretary's Headquarters and Field Activities, and Agency Officials and Events, 2001 - 2008"
+                  },
+                  {
+                     "hierarchy-item-id":"534",
+                     "hierarchy-item-record-group-number":"207",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"General Records of the Department of Housing and Urban Development, 1931 - 2003"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9093/207-DP-9093-DSC_3452_t.JPG",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"2799231",
+                  "file-url":"http://media.nara.gov/stillpix/207-dp/207-DP-9093/207-DP-9093-DSC_3452.JPG"
+               }
+            },
+            "local-identifier":"207-DP-9093-DSC_3452.JPG"
+         }
+      }
+   },
+   {
+      "_index":"dpla-20150410-144958",
+      "_type":"item",
+      "_id":"nara--7110630",
+      "_score":0,
+      "_source":{
+         "@context":{
+            "edm":"http://www.europeana.eu/schemas/edm/",
+            "isShownAt":"edm:isShownAt",
+            "dpla":"http://dp.la/terms/",
+            "dataProvider":"edm:dataProvider",
+            "aggregatedDigitalResource":"dpla:aggregatedDigitalResource",
+            "state":"dpla:state",
+            "hasView":"edm:hasView",
+            "provider":"edm:provider",
+            "collection":"dpla:aggregation",
+            "object":"edm:object",
+            "stateLocatedIn":"dpla:stateLocatedIn",
+            "begin":{
+               "@type":"xsd:date",
+               "@id":"dpla:dateRangeStart"
+            },
+            "@vocab":"http://purl.org/dc/terms/",
+            "LCSH":"http://id.loc.gov/authorities/subjects",
+            "sourceResource":"edm:sourceResource",
+            "name":"xsd:string",
+            "coordinates":"dpla:coordinates",
+            "end":{
+               "@type":"xsd:date",
+               "@id":"dpla:end"
+            },
+            "originalRecord":"dpla:originalRecord"
+         },
+         "isShownAt":"http://research.archives.gov/description/7110630",
+         "dataProvider":"National Archives and Records Administration",
+         "hasView":[
+            {
+               "format":"image/jpeg",
+               "@id":"http://media.nara.gov/stillpix/095-gp/801-900/Box0883/5200/95-GP-5200-Box0883_028_001_AC.jpg"
+            }
+         ],
+         "provider":{
+            "@id":"http://dp.la/api/contributor/nara",
+            "name":"National Archives and Records Administration"
+         },
+         "object":"http://media.nara.gov/stillpix/095-gp/801-900/Box0883/5200/95-GP-5200-Box0883_028_001_AC_t.jpg",
+         "ingestionSequence":5,
+         "id":"ac6f1ba7337f61b5121dfc79732f9d1f",
+         "_rev":"1-4f080e565e382b8ed41c4bb9a6e5a96b",
+         "ingestDate":"2014-01-19T10:37:56.733889",
+         "_id":"nara--7110630",
+         "sourceResource":{
+            "rights":[
+               "Unrestricted"
+            ],
+            "relation":[
+               "Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, ca. 1897 - ca. 1980"
+            ],
+            "title":"Road Construction - Virginia",
+            "collection":{
+               "id":"c1112670b59c011053639c6face94284",
+               "title":"Records of the Forest Service, 1870 - 2008",
+               "@id":"http://dp.la/api/collections/c1112670b59c011053639c6face94284"
+            },
+            "stateLocatedIn":{
+               "name":[
+                  "MD"
+               ]
+            },
+            "type":"image",
+            "creator":"Department of Agriculture. Forest Service.\t(07/01/1905 -)"
+         },
+         "admin":{
+            "sourceResource":{
+               "title":"Road Construction - Virginia"
+            }
+         },
+         "@id":"http://dp.la/api/items/ac6f1ba7337f61b5121dfc79732f9d1f",
+         "ingestType":"item",
+         "originalRecord":{
+            "use-restriction":{
+               "use-status":"Unrestricted",
+               "specific-use-restrictions":null
+            },
+            "created-timestamp":"6/5/2013 20:8:46",
+            "local-identifier-desc":"95-GP-5200-334864",
+            "access-restriction":{
+               "restriction-status":"Unrestricted",
+               "specific-access-restrictions":null
+            },
+            "indexable-dates":{
+               "date-range":"[b_x4_494, b_x4_475, b_x16_122, g_x64_30, b_x8_246, b_x1_1897, b_x16_119, g_x128_14, g_x8_237, g_x2_948, b_x2_949, g_x32_59, b_x1_1980, b_x32_60, g_x128_15, g_x4_474, g_x16_118, g_x32_61, g_x4_495, g_x2_990, g_x16_123, g_x64_29, g_x8_247]"
+            },
+            "parent":{
+               "parent-id":"651890",
+               "parent-title":"Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, compiled ca. 1897 - ca. 1980",
+               "parent-lod":"Series"
+            },
+            "general-records-types":{
+               "general-records-type":{
+                  "general-records-type-desc":"Photographs and other Graphic Materials",
+                  "general-records-type-id":"4237050",
+                  "num":"1"
+               }
+            },
+            "provider":{
+               "@id":"http://dp.la/api/contributor/nara",
+               "name":"National Archives and Records Administration"
+            },
+            "collection":{
+               "id":"c1112670b59c011053639c6face94284",
+               "title":"Records of the Forest Service, 1870 - 2008",
+               "@id":"http://dp.la/api/collections/c1112670b59c011053639c6face94284"
+            },
+            "arc-id-desc":"7110630",
+            "physical-occurrences":{
+               "physical-occurrence":{
+                  "copy-status":"Preservation-Reference",
+                  "media-occurrences":{
+                     "media-occurrence":{
+                        "num":"1",
+                        "container-id":"883",
+                        "media-type":"Photographic Print"
+                     }
+                  },
+                  "reference-units":{
+                     "reference-unit":{
+                        "summary":"true",
+                        "phone":"301-837-0561",
+                        "num":"1",
+                        "fax":"301-837-3621",
+                        "email":"stillpixorder@nara.gov",
+                        "name":"National Archives at College Park - Still Pictures",
+                        "mailcode":"RD-DC-S",
+                        "state":"MD",
+                        "address1":"National Archives at College Park",
+                        "address2":"8601 Adelphi Road",
+                        "ref-id":"31",
+                        "postcode":"20740-6001",
+                        "city":"College Park"
+                     }
+                  }
+               }
+            },
+            "creators":{
+               "creator":[
+                  {
+                     "summary":"true",
+                     "creator-display":"Department of Agriculture. Forest Service.\t(07/01/1905 - )",
+                     "num":"1",
+                     "standard":"Y",
+                     "creator-type":"Most Recent",
+                     "creator-record-type":"ORG",
+                     "creator-id":"1181639"
+                  },
+                  {
+                     "creator-display":"Department of Agriculture. Bureau of Forestry.\t (07/01/1901 - 07/01/1905)",
+                     "num":"2",
+                     "standard":"Y",
+                     "creator-type":"Predecessor",
+                     "creator-record-type":"ORG",
+                     "creator-id":"1181641"
+                  }
+               ]
+            },
+            "title-only":"Road Construction - Virginia",
+            "title":"Road Construction - Virginia",
+            "_id":"7110630",
+            "arc-id":"7110630",
+            "level-of-desc":{
+               "lod-display":"Item",
+               "level-id":"NAVI"
+            },
+            "parent-control-group":{
+               "parent-control-lod":"Record Group",
+               "parent-control-id":"95",
+               "parent-control-title":"Records of the Forest Service, 1870 - 2008"
+            },
+            "edited-timestamp":"[g_x8_1969, g_x64_246, g_x16_984, g_x4_3939, b_x1_15758, g_x2_7879, g_x32_492, g_x128_123]",
+            "hierarchy":{
+               "hierarchy-item":[
+                  {
+                     "hierarchy-item-id":"651890",
+                     "hierarchy-item-inclusive-dates":"ca. 1897 - ca. 1980",
+                     "hierarchy-item-lod":"Series",
+                     "hierarchy-item-title":"Photographs Relating to National Forests, Resource Management Practices, Personnel, and Cultural and Economic History, ca. 1897 - ca. 1980"
+                  },
+                  {
+                     "hierarchy-item-id":"424",
+                     "hierarchy-item-record-group-number":"95",
+                     "hierarchy-item-lod":"Record Group",
+                     "hierarchy-item-title":"Records of the Forest Service, 1870 - 2008"
+                  }
+               ]
+            },
+            "objects":{
+               "object":{
+                  "thumbnail-url":"http://media.nara.gov/stillpix/095-gp/801-900/Box0883/5200/95-GP-5200-Box0883_028_001_AC_t.jpg",
+                  "num":"1",
+                  "object-sequence-number":"1",
+                  "mime-type":"image/jpeg",
+                  "file-size":"2751371",
+                  "file-url":"http://media.nara.gov/stillpix/095-gp/801-900/Box0883/5200/95-GP-5200-Box0883_028_001_AC.jpg"
+               }
+            },
+            "local-identifier":"95-GP-5200-334864"
+         }
+      }
+   }
+]

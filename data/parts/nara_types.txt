@@ -1,0 +1,8 @@
+  "image",
+  "text"
+"image"
+"moving image"
+"text"
+[
+]
+null
