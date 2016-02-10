@@ -131,7 +131,7 @@ http://dp.la/api/items/25669406978981f38a89568b63ce0dc2#sourceResource - landing
 ###Parsing the giant 5gb data dump
 
 stream to jq with : 
-`gzip -dc all.json.gz | jq --stream ...`
+`jq --stream 'select(.[0][1] == "_source" and .[0][2] == "sourceResource" and .[0][3] == "type") | .[1]'`
 
 jq path: 
 `.[]._source.sourceResource.type`
@@ -145,7 +145,7 @@ But we want to get all possible types first to make sure we are'nt missing somet
 
 * some are arrays, some are strings, some are null. 
 
-Will these kill our memory?
+These will not function with our memory?
 `time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="sound")'`
 `time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="moving image")'`
 

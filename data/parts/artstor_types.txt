@@ -1,8 +1,0 @@
-  "image"
-  "physical object"
-  "physical object",
-  "text"
-"image"
-[
-]
-null

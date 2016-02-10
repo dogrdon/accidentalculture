@@ -1,7 +1,0 @@
-  "image",
-  "text"
-"image"
-"text"
-[
-]
-null

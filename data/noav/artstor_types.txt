@@ -1,0 +1,4 @@
+"image"
+"physical object"
+"text"
+null

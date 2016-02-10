@@ -1,8 +1,6 @@
-  "image",
-  "text"
 "image"
 "moving image"
+"physical object"
+"sound"
 "text"
-[
-]
 null

@@ -14,5 +14,5 @@ do
   echo "Processing $f"
   IFS="." read -a ARR <<< "$f"
   o="${ARR[0]}_types.txt"
-  gzip -dc $f | jq '.[]._source.sourceResource.type' | sort | uniq > $o 
+  zcat < $f | jq --stream 'select(.[0][1] == "_source" and .[0][2] == "sourceResource" and .[0][3] == "type") | .[1]' | sort | uniq > $o
 done
