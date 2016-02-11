@@ -12,7 +12,7 @@ if [ $PROCESS = "video" ]; then
 elif [ $PROCESS = "audio" ]; then
   TYPE="sound"
 else
-  echo "you can only specify 'audio' or 'video', no wierd stuff."
+  echo "you can only specify 'audio' or 'video', no wierd stuff. try again."
 fi
 
 DIR=$(dirname "$PWD")
@@ -22,8 +22,8 @@ do
   echo "Processing \""$TYPE"\" types in $f"
   IFS="." read -a ARR <<< "$f"
   o="${ARR[0]}_$PROCESS.json"
-  zcat < $f | 
+  time zcat < $f | 
   jq -cn --stream "fromstream(1|truncate_stream(inputs))" | 
-  jq ". | select(._source.sourceResource.type==\""$TYPE"\")" >> $o
+  jq ". | select(._source.sourceResource.type==\"${TYPE}\")" >> $o
 done
 
