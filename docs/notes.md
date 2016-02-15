@@ -125,7 +125,8 @@ http://libcdm1.uncg.edu/u?/ui,53359 - redirects to: http://libcdm1.uncg.edu/cdm/
 ###Transcripts
 
 ###Puzzling
-http://dp.la/api/items/25669406978981f38a89568b63ce0dc2#sourceResource - landing page for a collection
+- http://dp.la/api/items/25669406978981f38a89568b63ce0dc2#sourceResource - landing page for a collection
+- missouri hub does not seem to have the same metadata structure as the others, no type properties of sourceResource.
 
 
 ###Parsing the giant 5gb data dump
@@ -149,5 +150,44 @@ These will not function with our memory?
 `time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="sound")'`
 `time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="moving image")'`
 
+###Current Distribution of AV items (as of Feb 14, 2016)
 
+This is based on whether entries from these hubs have types that express "moving image" or "sound". Might not be 100% accurate and might not reflect the current collections past 2/14/2016)
+
+####Audio and Video
+
+* cdl
+* digital commonwealth
+* digital nc
+* esdn
+* georgia
+* gpo
+* indiana
+* mwdl
+* nypl
+* scdl
+* smithsonian
+* the portal to texas history
+* tn
+* uiuc
+* usc
+* washington
+
+####Audio Only
+
+* internet archive
+* kdl
+
+####Video Only
+
+* nara
+
+####Neither
+
+* artstor
+* bhl
+* david_rumsey
+* harvard
+* mdl
+* virginia
 

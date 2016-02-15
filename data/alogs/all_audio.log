@@ -1,0 +1,4 @@
+zcat all.json.gz  429.70s user 118.19s system 2% cpu 5:55:17.02 total
+jq -cn --stream 'fromstream(1|truncate_stream(inputs))'  20388.55s user 45.16s system 95% cpu 5:55:17.05 total
+jq -c 'select(any(._source.sourceResource; .type == "sound"))' >>   1578.41s user 72.48s system 7% cpu 5:55:17.05 total
+sed -i -e 's/$/,/g' -e '$s/,$//' -e '1i[' -e '$a]' all_audio.json  3.16s user 0.16s system 79% cpu 4.200 total

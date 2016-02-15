@@ -1,0 +1,4 @@
+zcat all.json.gz  437.19s user 122.11s system 2% cpu 5:37:03.37 total
+jq -cn --stream 'fromstream(1|truncate_stream(inputs))'  20177.25s user 40.67s system 99% cpu 5:37:03.39 total
+jq -c 'select(any(._source.sourceResource; .type == "moving image"))' >>   1569.87s user 73.68s system 8% cpu 5:37:03.39 total
+sed -i -e 's/$/,/g' -e '$s/,$//' -e '1i[' -e '$a]' all_video.json  5.89s user 0.21s system 92% cpu 6.619 total

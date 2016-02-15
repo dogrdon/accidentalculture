@@ -1,4 +1,0 @@
-"image"
-"moving image"
-"sound"
-"text"
