@@ -5,6 +5,7 @@
 /test/version_tmp/
 /tmp*/
 *.gz
+data/all_*.json
 
 ## Environment normalization:
 /.bundle/

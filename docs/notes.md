@@ -131,12 +131,11 @@ http://libcdm1.uncg.edu/u?/ui,53359 - redirects to: http://libcdm1.uncg.edu/cdm/
 
 ###Parsing the giant 5gb data dump
 
-stream to jq with : 
-`jq --stream 'select(.[0][1] == "_source" and .[0][2] == "sourceResource" and .[0][3] == "type") | .[1]'`
+
+0) Preliminary exploration: 
 
 jq path: 
 `.[]._source.sourceResource.type`
-
 
 For something like Empire State Digital network, 49.6mb, takes about 28 - 30 second real time:
 `time gzip -dc esdn.json.gz | jq '.[] | select(._source.sourceResource.type=="sound")'`
@@ -149,6 +148,28 @@ But we want to get all possible types first to make sure we are'nt missing somet
 These will not function with our memory?
 `time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="sound")'`
 `time gzip -dc all.json.gz | jq '.[] | select(._source.sourceResource.type=="moving image")'`
+
+
+
+1) To work with these large files, and actually achieve something with limited memore - stream to jq with:
+
+This will give you all of the types, for example, if you want to figure out which collections have "moving image", and "sound" types 
+`zcat < file.json.gz | jq --stream 'select(.[0][1] == "_source" and .[0][2] == "sourceResource" and .[0][3] == "type") | .[1]'`
+
+2) extract only the entries you want (so you have smaller files to analyze, and can facet):
+
+`zcat < file.json.gz | jq -cn --stream "fromstream(1|truncate_stream(inputs))" | jq -c "select(any(._source.sourceResource; .type=="moving image"))"`
+
+
+3) make sure it's valid json (below is posix formatted):
+
+  `sed -i.bak -e 's/$/,/g' -e '$s/,$//' -e '1i\
+  [' -e '$a\
+  ]' file.json`
+
+4) Continue to analyze in jq (extracting necessary subset of information), or use another language, or tool to analyze open refine?
+
+
 
 ###Current Distribution of AV items (as of Feb 14, 2016)
 
@@ -190,4 +211,12 @@ This is based on whether entries from these hubs have types that express "moving
 * harvard
 * mdl
 * virginia
+
+
+####Questions we'd like to answer with data in more managable shape
+
+* How much audio/video per provider?
+* How much audio/video per domain (dataProvider) within provider?
+* How many of those domains are ContentDM sites?
+* What are other ways AV data are being distributed (youtube, primo, )
 
