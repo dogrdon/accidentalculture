@@ -220,3 +220,123 @@ This is based on whether entries from these hubs have types that express "moving
 * How many of those domains are ContentDM sites?
 * What are other ways AV data are being distributed (youtube, primo, )
 
+###Some Summary Data
+
+####Hosts Counts (Video)
+
+| Host                                  | COUNT                   | 
+|:--------------------------------------|:-----------------------:|
+|dlg.galileo.usg.edu                    |         11542           |
+|research.archives.gov                  |          5640           |
+|openvault.wgbh.org                     |          2887           |
+|utah-primoprod.hosted.exlibrisgroup.com|          1894           |
+|digitallibrary.usc.edu                 |          1770           |
+|texashistory.unt.edu                   |          1071           | 
+|libx.bsu.edu                           |           631           |
+|digital.lib.ecu.edu                    |           277           |
+|elonuniversity.contentdm.oclc.org      |           240           |
+|cdm16786.contentdm.oclc.org            |           174           |
+|www.youtube.com                        |           153           |
+|www.crossroadstofreedom.org            |           112           |
+|cdm16016.contentdm.oclc.org            |           108           |
+|library.digitalnc.org                  |            95           |
+|history.library.gatech.edu             |            70           |
+|digitalcollections.nypl.org            |            64           |
+|cdm16108.contentdm.oclc.org            |            54           |
+|digitalcollections.lib.rochester.edu   |            49           |
+|clio.lib.olemiss.edu                   |            41           |
+|ftp.atlantahistorycenter.com           |            39           |
+|cdm16122.contentdm.oclc.org            |            24           |
+|hdl.handle.net                         |            20           |
+|catalog.gpo.gov                        |            14           |
+|moakleyarchive.omeka.net               |            14           |
+|digital.ncdcr.gov                      |            12           |
+|digital.tcl.sc.edu                     |            12           |
+|www.hrvh.org                           |            10           |
+|cdm15138.contentdm.oclc.org            |             8           |
+|cdm16694.contentdm.oclc.org            |             8           |
+|collections.si.edu                     |             8           |
+|imagesearchnew.library.illinois.edu    |             8           |
+|www.libs.uga.edu                       |             7           |
+|ark.cdlib.org                          |             6           |
+|www.georgiaencyclopedia.org            |             5           |
+|catalog.hathitrust.org                 |             4           |
+|russelldoc.galib.uga.edu               |             4           |
+|encore.greenvillelibrary.org           |             3           |
+|lcdl.library.cofc.edu                  |             3           |
+|primo.getty.edu                        |             3           |
+|album.atlantahistorycenter.com         |             2           |
+|collections.atlantahistorycenter.com   |             2           |
+|heritage.noblenet.org                  |             2           |
+|cdm15838.contentdm.oclc.org            |             1           |
+|depts.washington.edu                   |             1           |
+|digital.lib.utk.edu                    |             1           |
+|dlgmedia1-www.galib.uga.edu            |             1           |
+|libcdm1.uncg.edu                       |             1           |
+|nashville.contentdm.oclc.org           |             1           |
+|omeka.library.appstate.edu             |             1           |
+|www.floridamemory.com                  |             1           |
+|www.library.gatech.edu                 |             1           |  
+|---------------------------------------|-------------------------|
+|TOTAL                                  |           27099         |        
+
+####Host Counts (Audio)    
+
+| Host                                   | COUNT                  | 
+|:---------------------------------------|:----------------------:|    
+|utah-primoprod.hosted.exlibrisgroup.com |         4501           |
+|collections.si.edu                      |         3327           |
+|dlg.galileo.usg.edu                     |         1319           |
+|libx.bsu.edu                            |          476           |
+|kdl.kyvl.org                            |          415           |
+|nashville.contentdm.oclc.org            |          412           |
+|texashistory.unt.edu                    |          366           |
+|digital.ncdcr.gov                       |          361           |
+|digitallibrary.usc.edu                  |          325           |
+|www.crossroadstofreedom.org             |          266           |
+|lcdl.library.cofc.edu                   |          234           |
+|digitalcollections.library.gsu.edu      |          211           |
+|cdm16786.contentdm.oclc.org             |          159           |
+|digital.tcl.sc.edu                      |          120           |
+|digital.lib.ecu.edu                     |          115           |
+|collections.atlantahistorycenter.com    |          105           |
+|libcdm1.uncg.edu                        |           93           |
+|ohms.galileo.usg.edu                    |           80           |
+|cdm15138.contentdm.oclc.org             |           71           |
+|moakleyarchive.omeka.net                |           70           |
+|goldmine.uncc.edu                       |           69           |
+|wcudigitalcollection.cdmhost.com        |           65           |
+|library.digitalnc.org                   |           64           |
+|hdl.handle.net                          |           61           |
+|openvault.wgbh.org                      |           38           |
+|cdm16694.contentdm.oclc.org             |           37           |
+|128.121.13.244                          |           34           |
+|cdm15838.contentdm.oclc.org             |           26           |
+|archive.org                             |           21           |
+|www.hrvh.org                            |           20           |
+|kaga.wsulibs.wsu.edu                    |           19           |
+|catalog.gpo.gov                         |           12           |
+|acumen.lib.ua.edu                       |           11           |
+|digitalcollections.nypl.org             |           11           |
+|cdm16122.contentdm.oclc.org             |            9           |
+|cdm16108.contentdm.oclc.org             |            8           |
+|content.wsulibs.wsu.edu                 |            8           |
+|ftp.atlantahistorycenter.com            |            7           |
+|ark.digitalcommonwealth.org             |            6           |
+|imagesearchnew.library.illinois.edu     |            6           |
+|www.archive.org                         |            6           |
+|ark.cdlib.org                           |            5           |
+|catalog.hathitrust.org                  |            4           |
+|heritage.noblenet.org                   |            3           |
+|soundcloud.com                          |            3           |
+|www.presidentialtimeline.org            |            2           |
+|content5.ad.wsu.edu                     |            1           |
+|elonuniversity.contentdm.oclc.org       |            1           |
+|mdah.state.ms.us                        |            1           |
+|presidentialtimeline.org                |            1           |
+|primo.getty.edu                         |            1           |
+|register.shelby.tn.us                   |            1           |
+|www.louisianadigitallibrary.org         |            1           |
+|(blank)                                 |           60           |
+|----------------------------------------|------------------------|
+|TOTAL                                   |         13588          |
