@@ -58,50 +58,51 @@ http://api.dp.la/items/?q=cow&page_size=12&sourceResource.type=%22moving%20image
 
 Since a headless browser that supports flash doesn't seem to be a common tool, may need some hueristics. If there are only a handful of collections that actually have video, this might not be so bad. 
 
-WSB-TV collection - http://dlg.galileo.usg.edu/news/id:wsbn35848: http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/{obj-id}.f4v
-  http://dp.la/api/contributor/georgia
-  New pattern: http://dlg.galileo.usg.edu/ugabma/gfc/do-mp4:gfc-2028 = http://dlgmedia1-www.galib.uga.edu/gfc/mp4/gfc-2028.mp4
+dlg.galileo.usg.edu 11542
+research.archives.gov 5640
+openvault.wgbh.org 2887
+utah-primoprod.hosted.exlibrisgroup.com 1894
+digitallibrary.usc.edu 1770
+texashistory.unt.edu 1071
+libx.bsu.edu 631
+digital.lib.ecu.edu 277
+elonuniversity.contentdm.oclc.org 240
+cdm16786.contentdm.oclc.org 174
+www.youtube.com 153
+www.crossroadstofreedom.org 112
+cdm16016.contentdm.oclc.org 108
 
-archives.org appear to have a download button: a#downloadVideoAudio['href']
-  http://dp.la/api/contributor/nara
-  nara hasView['@id'] goes straigt to media resource? if hasView['format'] is 
+####TOP HOSTS BY COUNT
+
+| host                                    | provider                                                 | path                                                                                                                                     | total_in_dpla                                                                                                      | notes                                                                                                                                                                            | redirect                                                      | platform                                     |                              |                  |                | 
+|-----------------------------------------|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|----------------------------------------------|------------------------------|------------------|----------------| 
+| dlg.galileo.usg.edu                     | http://dp.la/api/contributor/georgia                     | "http://dlg.galileo.usg.edu/news/id:wsbn35848 -> http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/{obj-id}.f4v                                |  http://dlg.galileo.usg.edu/ugabma/gfc/do-mp4:gfc-2028 -> http://dlgmedia1-www.galib.uga.edu/gfc/mp4/gfc-2028.mp4" | 11542                                                                                                                                                                            | static url if know object id                                  | "yes                                         |  but doesn't matter"         | "flash           |  flowplayer"   | 
+| history.library.gatech.edu              | http://dp.la/api/contributor/georgia                     | div.mejs-mediaelement video['src']                                                                                                       | 70                                                                                                                 | interviews?                                                                                                                                                                      | no                                                            | mediaelementjs.com                           |                              |                  |                | 
+| www.youtube.com                         | http://dp.la/api/contributor/georgia                     |                                                                                                                                          | 153                                                                                                                | "interviews                                                                                                                                                                      |  fair use"                                                    | no                                           | youtube/html5                |                  |                | 
+| research.archives.gov                   | http://dp.la/api/contributor/nara                        | a#downloadVideoAudio['href']                                                                                                             | 5640                                                                                                               | sometimes only first few minutes available for preview/download. nara hasView['@id'] goes straigt to media resource? if hasView['format'] is. Unrestricted rights for 5625 items | yes                                                           | wmv                                          |                              |                  |                | 
+| openvault.wgbh.org                      | http://dp.la/api/contributor/digital-commonwealth        | MUST AUTHENTICATE                                                                                                                        | 2887                                                                                                               |                                                                                                                                                                                  |                                                               |                                              |                              |                  |                | 
+| utah-primoprod.hosted.exlibrisgroup.com | http://api.dp.la/contributor/mwdl                        |                                                                                                                                          | 1894                                                                                                               | "no streaming                                                                                                                                                                    |  but has a link to vimeo? has a link to tons of places        |  might not be a great resource. for now."    |                              | "linkes to vimeo |  youtube etc." | 
+| digitallibrary.usc.edu                  | http://dp.la/api/contributor/usc                         | cdm:utils/getstream                                                                                                                      | 1770                                                                                                               |                                                                                                                                                                                  |                                                               | flowplayer                                   |                              |                  |                | 
+| texashistory.unt.edu                    | http://dp.la/api/contributor/the_portal_to_texas_history |                                                                                                                                          | 1071                                                                                                               | "won't work with youtube-dl                                                                                                                                                      |  unclear rights. View this video button. Really hard to get." |                                              | jwplayer                     |                  |                | 
+| libx.bsu.edu                            | http://dp.la/api/contributor/indiana                     | cdm: empty url shortcut                                                                                                                  | 631                                                                                                                | "news footage                                                                                                                                                                    |  highly restrictive rights                                    |  not worth it. Getstream onl gives blank url |  only supports silverlight?" |                  |                | 
+| digital.lib.ecu.edu                     | http://dp.la/api/contributor/digitalnc                   | "video source[type=""video/mp4""]['href']"                                                                                               | 277                                                                                                                |                                                                                                                                                                                  |                                                               |                                              |                              |                  |                | 
+| elonuniversity.contentdm.oclc.org       | http://dp.la/api/contributor/digitalnc                   | cdm: utils/gestream                                                                                                                      | 240                                                                                                                |                                                                                                                                                                                  |                                                               |                                              |                              |                  |                | 
+| cdm16786.contentdm.oclc.org             | http://dp.la/api/contributor/washington                  | cdm: utils/gestream                                                                                                                      | 174                                                                                                                |                                                                                                                                                                                  |                                                               | flowplayer                                   |                              |                  |                | 
+| www.crossroadstofreedom.org             | http://dp.la/api/contributor/tn                          | http://www.crossroadstofreedom.org/view.player?pid=rds:117969 -> http://fedora.crossroadstofreedom.org/fedora/get/rds:117969/video_1.flv | 112                                                                                                                | interviews? Have transcripts.                                                                                                                                                    |                                                               | flash                                        |                              |                  |                | 
+| cdm16016.contentdm.oclc.org             | http://dp.la/api/contributor/scdl                        | cdm: utils/getstream                                                                                                                     | 108                                                                                                                |                                                                                                                                                                                  |                                                               |                                              |                              |                  |                | 
+
+
 
 mndigital.org (contentdm): http://reflections.mndigital.org/utils/getstream/collection/{collection-id}/id/{item-id} 
 
-texashistory.unt.edu: Ugh, really tucked away, jwplayer - won't work with youtube-dl
-
-utah-primoprod.hosted.exlibrisgroup.com: no streaming, but has a link to vimeo? has a link to tons of places, might not be a great resource. for now.
-  http://dp.la/api/contributor/mwdl (are there more?)
-
-libx.bsu.edu: cdm, but utils/getstream pattern above doesn't work (downloads blank .url file) and it only supports silverlight
-cdm16016.contentdm.oclc.org: utils/getstream downloads url to resource ()
-  http://dp.la/api/contributor/scdl (are there more?)
-
-openvault.wgbh.org: appears to be behind authentication
-  http://dp.la/api/contributor/digital-commonwealth
-
 georgiaencyclopedia.org: video source['src']
   http://dp.la/api/contributor/georgia - so we have to check the url, provider
-
-digital.lib.ecu.edu: video source[type="video/mp4"]['href']
-  http://dp.la/api/contributor/digitalnc - again check the url
-
-###To Collect
-
-elonuniversity.contentdm.oclc.org - utils/gestream seems to provide access straight to vid
-  http://dp.la/api/contributor/digitalnc
 
 purl.umn.edu = umedia.lib.umn.edu - argh it's drupal, flash if the video streams - div#gallery-thumb span['onclick'] = 'getPlayer('video','prod/60/815977','sites/default/files/archive/60/video/quicktime/815977.mov');'
   http://dp.la/api/contributor/mdl
 
 http://digitalcollections.nypl.org/items/3ef7d750-0381-0131-9fd1-3c075448cc4b - brightcove (youtube-dl?)
   http://dp.la/api/contributor/nypl
-
-http://cdm16786.contentdm.oclc.org/cdm/ref/collection/filmarch/id/63 - utils/getstream
-  http://dp.la/api/contributor/washington
-
-http://libx.bsu.edu/cdm/ref/collection/newslink/id/442 - cdm, utils/getstream
-  http://dp.la/api/contributor/indiana
 
 
 ###Grabbing Audio
