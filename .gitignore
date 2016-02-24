@@ -6,6 +6,7 @@
 /tmp*/
 *.gz
 data/all_*.json
+gifs/
 
 ## Environment normalization:
 /.bundle/
