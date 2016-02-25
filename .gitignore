@@ -1,6 +1,6 @@
 *.gem
 *.rbc
-/config
+/conf
 /test/tmp/
 /test/version_tmp/
 /tmp*/
