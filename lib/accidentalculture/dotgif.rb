@@ -12,7 +12,7 @@ module DotGif
     videopath = "../tmp_v/"
     jsonpath = videopath + "*.json"
     gifpath = "../gifs/"
-    default_gif_len = "3" #3 seconds for the gif
+    default_gif_len = "2" #2 seconds for the gif
   	#find one in tmp_v(based on score?)
     gifoptions = Hash.new
     Dir.glob(jsonpath) do |f|
@@ -23,9 +23,9 @@ module DotGif
       gifoptions[dpla] = score
     end
 
-    puts gifoptions.class
-
     winner = gifoptions.max_by{|k,v| v}[0]
+    #TODO: if winner alread in db, delete that from tmp_v and 
+    #run search_and_deploy again. if nothing left, return nil.
     winnerpath = "#{videopath}#{winner}"
     video = FFMPEG::Movie.new(winnerpath)
 
@@ -36,7 +36,7 @@ module DotGif
     giffile = "#{winner}_#{start}_#{default_gif_len}.gif"
     gifdest = "#{gifpath}#{giffile}" 
 
-    transcode_options = {frame_rate: 20, custom: "-ss #{start} -t #{default_gif_len}"}
+    transcode_options = {frame_rate: 15, resolution: "320x240", video_bitrate: 300, custom: "-ss #{start} -t #{default_gif_len}"}
 
     #TODO need error checking, can't do it like this ultimately
     transcoded = video.transcode(gifdest, transcode_options)

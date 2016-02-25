@@ -40,31 +40,36 @@ if __FILE__ == $0
 		end
 	end
 
-	while Dir[$video_dir].empty?
-		get_results
-	end
+	begin
 
-	#trigger gif
-	gif_res = DotGif::search_and_deploy
+		while Dir[$video_dir].empty?
+			get_results
+		end
 
-	#with info returned from gif, pass to twitter
-	if gif_res.class == Hash
-		title = gif_res[:record]['source_resource']['title'].split[0...5].join(' ')
-		title << "..."
-		link = "http://dp.la/item/" << gif_res[:_id]
-		text = "#{title} from #{link}"
+		#trigger gif
+		gif_res = DotGif::search_and_deploy
 
-		post = Twitter::post_content(text, gif_res[:gif])
+		#with info returned from gif, pass to twitter
+		if gif_res.class == Hash
+			title = gif_res[:record]['source_resource']['title'].split[0...5].join(' ')
+			title << "..."
+			link = "http://dp.la/item/" << gif_res[:_id]
+			text = "#{title} from #{link}"
 
-		puts post.id
-		#add information brought back from twitter
-		#save this to mongo
-	else
-		puts "No, I'm done, it didn't work, there's nothing to post, I'm sorry, Just try again later, I'm through *ugh*."
+			post = Twitter::post_content(text, gif_res[:gif])
+
+			puts post.id
+			#add information brought back from twitter
+			#save this to mongo
+		else
+			puts "No, I'm done, it didn't work, there's nothing to post, I'm sorry, Just try again later, I'm through *ugh*."
+			shut_it_down
+		end
+
+		#when all done, clear out everything in tmp_v
+		shut_it_down
+	rescue
 		shut_it_down
 	end
-
-	#when all done, clear out everything in tmp_v
-	shut_it_down
 	
 end

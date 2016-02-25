@@ -40,7 +40,7 @@ module Download
 		path = "../tmp_v/#{someid}"
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		begin
-			timeout(20) do
+			timeout(120) do
 				open(path, 'wb') do |f|
 					puts "DOWNLOADING: #{url}"
 					begin
@@ -55,6 +55,7 @@ module Download
 			  			end
 			  		rescue OpenURI::HTTPError => ex
 			  			puts "Oops #{ex}"
+			  			File.delete(path)
 			  		end
 				end
 			end
