@@ -35,7 +35,8 @@ module Clean
 						:dl_info => $VPATHS[d['provider']['@id']],
 						:source_resource => d['sourceResource'],
 						:dpla_id => d['id'],
-						:original_url => d['isShownAt']
+						:original_url => d['isShownAt'], 
+						:score => d['score']
 				}
 				return r
 			else

@@ -9,6 +9,7 @@ require 'capybara/poltergeist'
 require 'timeout'
 require 'open-uri'
 require 'open_uri_redirections'
+require 'json'
 
 
 module Download
@@ -35,7 +36,7 @@ module Download
 		return status	
 	end
 
-	def self.download(url, someid)
+	def self.download(url, someid, v)
 		path = "../tmp_v/#{someid}"
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		begin
@@ -47,6 +48,11 @@ module Download
 						ct = dl.content_type #if this is wrong on the server, it will be wrong here.
 						puts "#{url} is #{ct}" #for testing
 			  			f << dl.read
+			  			#also save metadata for file, so we can retrieve later
+			  			md = path<<".json"
+			  			open(md, 'wb') do |m|
+			  				m.write(v.to_json)
+			  			end
 			  		rescue OpenURI::HTTPError => ex
 			  			puts "Oops #{ex}"
 			  		end
@@ -75,13 +81,13 @@ module Download
 		end
 		
 		if !url.nil?
-			download url, file_id
+			download url, file_id, v
 		else
 			puts "no pattern for URL: #{start_url}"
 		end
 	end
 
-	def handleUrlShortcut(sc)
+	def self.handleUrlShortcut(sc)
 		#sometimes you are given back a url shortcut text file, parse this to see if blank or has location
 		f = sc.lines
 		url = f.find {|e| /URL/ =~ e}.split('=')[1].strip
@@ -95,7 +101,7 @@ module Download
 		url = proceed[:ok] == false ? handleUrlShortcut(proceed[:with]) : ourl
 
 		if url != 'about:blank' && !url.nil?
-			download url, file_id
+			download url, file_id, v
 		else
 			puts "forget it, we won't be able to download from #{ourl}...moving on."
 		end
@@ -113,7 +119,7 @@ module Download
 		session.visit url
 		page = Nokogiri::HTML(session.html) #allowing all redirs is risky, but since we know where we are getting stuff from, it's okay for now.
 		srcUrl = page.css(v[:dl_info][:path]).first[v[:dl_info][:sel]]
-		download srcUrl, file_id
+		download srcUrl, file_id, v
 	end
 
 	def self.download_videos(v)
