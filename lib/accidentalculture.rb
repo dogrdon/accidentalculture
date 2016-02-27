@@ -37,7 +37,7 @@ if __FILE__ == $0
 			get_results
 		else
 			puts "Starting to download..."			
-			dl_result = video_results.length > 5 ? video_results.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
+			dl_result = video_results.length > 5 ? video_results.take(3).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
 			
 			if dl_result.length == 0
 				get_results
