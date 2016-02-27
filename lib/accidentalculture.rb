@@ -7,13 +7,13 @@ require_relative 'accidentalculture/word'
 require_relative 'accidentalculture/twitter'
 require_relative 'accidentalculture/dotgif'
 require_relative 'accidentalculture/store'
-require_relative '../etc/conf/api_keys'
-require_relative '../etc/conf/mongo_conf'
+require ENV["HOME"]+'/accidentalculture/etc/conf/api_keys'
+require ENV["HOME"]+'/accidentalculture/etc/conf/mongo_conf'
 
 
 if __FILE__ == $0
 
-	$video_dir = '../tmp_v/*'
+	$video_dir = ENV["HOME"]+'/accidentalculture/tmp_v/*'
 
 
 	def shut_it_down
@@ -36,8 +36,7 @@ if __FILE__ == $0
 			puts "Sorry, after much consideration of your request, there are no viable downloads for #{searchterm}"
 			get_results
 		else
-			puts "Starting to download..."
-			
+			puts "Starting to download..."			
 			dl_result = video_results.length > 5 ? video_results.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
 			
 			if dl_result.length == 0
@@ -49,6 +48,8 @@ if __FILE__ == $0
 	begin
 
 		while Dir[$video_dir].empty?
+
+			puts "#{$video_dir} is EMPTY EMPTY EMPTY"
 			get_results
 		end
 

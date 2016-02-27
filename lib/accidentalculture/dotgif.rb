@@ -6,14 +6,14 @@
 
 require 'streamio-ffmpeg'
 require 'json'
-require_relative '../../etc/conf/mongo_conf'
+require ENV["HOME"]+'/accidentalculture/etc/conf/mongo_conf'
 
 module DotGif
   def self.search_and_deploy
     storage = Store::MongoStore.new(MONGO_CONF[:host], MONGO_CONF[:port], MONGO_CONF[:database], MONGO_CONF[:collection])
-    videopath = "../tmp_v/"
+    videopath = ENV["HOME"]+"/accidentalculture/tmp_v/"
     jsonpath = videopath + "*.json"
-    gifpath = "../gifs/"
+    gifpath = ENV["HOME"]+"/accidentalculture/gifs/"
     default_gif_len = "2" #2 seconds for the gif
   	#find one in tmp_v(based on score?)
     gifoptions = Hash.new
@@ -53,10 +53,13 @@ module DotGif
     transcode_options = {frame_rate: 15, resolution: "320x240", video_bitrate: 300, custom: "-ss #{start} -t #{default_gif_len}"}
 
     #TODO need error checking, can't do it like this ultimately
+    puts "TRANSCODING NOW"
     transcoded = video.transcode(gifdest, transcode_options)
+    puts "TRANSCODING COMPLETE"
     #return the id of winner, gif_file to the main
     record_path = "#{winner}.json"
     begin 
+      puts "PACKING UP METADATA FOR WRAPPING UP."
       result = {_id: winner, gif: giffile, record: JSON.parse(File.open("#{videopath}#{record_path}").read)}
     rescue => e
       puts "Error packing up result: #{e}"

@@ -37,10 +37,10 @@ module Download
 	end
 
 	def self.download(url, someid, v)
-		path = "../tmp_v/#{someid}"
+		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{someid}"
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		begin
-			timeout(120) do
+			timeout(40) do
 				open(path, 'wb') do |f|
 					puts "DOWNLOADING: #{url}"
 					begin
