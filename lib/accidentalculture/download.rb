@@ -111,7 +111,10 @@ module Download
 	def self.getSrc(v, file_id) 
 		url = v[:original_url]
 		puts "TRYING TO GET srcUrl for #{url}"
-		browser_options = {:js_errors => false, :timeout => 60}
+		browser_options = {:js_errors => false, 
+											 :timeout => 60, 
+											 :phantomjs_options => ['--ignore-ssl-errors=yes'] #maybe ill advised, but directed at issue: #3
+											}
 		Capybara.register_driver :poltergeist do |app|
 			Capybara::Poltergeist::Driver.new(app, browser_options)
 		end
@@ -120,12 +123,20 @@ module Download
 		session.visit url
 		page = Nokogiri::HTML(session.html) #allowing all redirs is risky, but since we know where we are getting stuff from, it's okay for now.
 		srcUrl = page.css(v[:dl_info][:path]).first[v[:dl_info][:sel]]
-		download srcUrl, file_id, v
+		if !srcUrl.nil
+			download srcUrl, file_id, v
+		else
+			puts "url is empty for #{v[:dpla_id]}, probably because attempt to get resource was botched. skipping."
+		end
 	end
 
 	def self.download_videos(v)
 		f = v[:dl_info][:type]
 		fid = v[:dpla_id]
-		send(f, v, fid)
+		begin
+			send(f, v, fid)
+		rescue => error
+			puts "Something went wrong with the download, and it was: #{error}"
+		end
 	end
 end

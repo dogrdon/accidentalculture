@@ -6,11 +6,14 @@ require_relative 'accidentalculture/download'
 require_relative 'accidentalculture/word'
 require_relative 'accidentalculture/twitter'
 require_relative 'accidentalculture/dotgif'
+require_relative 'accidentalculture/store'
 require_relative '../etc/conf/api_keys'
+require_relative '../etc/conf/mongo_conf'
 
 if __FILE__ == $0
 
 	$video_dir = '../tmp_v/*'
+
 
 	def shut_it_down
 
@@ -33,7 +36,15 @@ if __FILE__ == $0
 			get_results
 		else
 			puts "Starting to download..."
-			dl_result = video_results.length > 5 ? video_results.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
+			begin
+				timeout(45) do
+					dl_result = video_results.length > 5 ? video_results.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
+				end
+			rescue Timeout::Error
+				puts "Starting download is taking too long, retrying new process"
+				get_results
+			end
+			
 			if dl_result.length == 0
 				get_results
 			end
@@ -55,12 +66,16 @@ if __FILE__ == $0
 			title << "..."
 			link = "http://dp.la/item/" << gif_res[:_id]
 			text = "#{title} from #{link}"
-
 			post = Twitter::post_content(text, gif_res[:gif])
-
-			puts post.id
 			#add information brought back from twitter
+			gif_res[:twitter_post_id] = post.id
 			#save this to mongo
+			begin
+				storage = Store::MongoStore.new(MONGO_CONF[:host], MONGO_CONF[:port], MONGO_CONF[:database], MONGO_CONF[:collection])
+				storage.insertdoc(gif_res)
+			rescue => error
+				puts "Something wrong happened when storing, and it was: #{error}"
+			end
 		else
 			puts "No, I'm done, it didn't work, there's nothing to post, I'm sorry, Just try again later, I'm through *ugh*."
 			shut_it_down

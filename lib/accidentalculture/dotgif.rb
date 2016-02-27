@@ -6,9 +6,11 @@
 
 require 'streamio-ffmpeg'
 require 'json'
+require_relative '../../etc/conf/mongo_conf'
 
 module DotGif
   def self.search_and_deploy
+    storage = Store::MongoStore.new(MONGO_CONF[:host], MONGO_CONF[:port], MONGO_CONF[:database], MONGO_CONF[:collection])
     videopath = "../tmp_v/"
     jsonpath = videopath + "*.json"
     gifpath = "../gifs/"
@@ -24,8 +26,20 @@ module DotGif
     end
 
     winner = gifoptions.max_by{|k,v| v}[0]
-    #TODO: if winner alread in db, delete that from tmp_v and 
+    
+    #if winner alread in db, delete that from tmp_v and 
     #run search_and_deploy again. if nothing left, return nil.
+    if storage.checkpost(winner) 
+      gifoptions.delete(winner)
+      if gifoptions.length == 0
+        result = nil
+        return result
+      else
+        winner = gifoptions.max_by{|k,v| v}[0]
+      end
+    end
+
+
     winnerpath = "#{videopath}#{winner}"
     video = FFMPEG::Movie.new(winnerpath)
 
@@ -45,7 +59,7 @@ module DotGif
     begin 
       result = {_id: winner, gif: giffile, record: JSON.parse(File.open("#{videopath}#{record_path}").read)}
     rescue => e
-      puts "THIS: #{e}"
+      puts "Error packing up result: #{e}"
       result = nil
     end
     return result
