@@ -1,3 +1,3 @@
-dpla => ffmpeg => twitter (eventually)
+dpla => ffmpeg => twitter
 
 AV nonsense for our cultural heritage
