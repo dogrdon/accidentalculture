@@ -15,7 +15,6 @@ if __FILE__ == $0
 
 	$video_dir = ENV["HOME"]+'/accidentalculture/tmp_v/*'
 
-
 	def shut_it_down
 
 		#delete tmp_v
@@ -23,17 +22,17 @@ if __FILE__ == $0
 	end
 
 	def get_results
-		searchterm = Word::get_word
-		puts "search term is #{searchterm}"
+		$searchterm = Word::get_word
+		puts "search term is #{$searchterm}"
 		itemlimit = 25
 		#set up for api, search
 		__APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS[:dpla]}&%s"}
 		c = Search::Client.new(__APIS__[:dpla])
-		video_results = Clean::clean_results c.search(searchterm, '"moving image"', 'items', itemlimit)
+		video_results = Clean::clean_results c.search($searchterm, '"moving image"', 'items', itemlimit)
 		#here, video (and audio, soon) should be a list of potential sources with their relevant metadata
 		#so depending on which document.dl_info.type it has, go get the video
 		if video_results.nil?
-			puts "Sorry, after much consideration of your request, there are no viable downloads for #{searchterm}"
+			puts "Sorry, after much consideration of your request, there are no viable downloads for #{$searchterm}"
 			get_results
 		else
 			puts "Starting to download..."			
@@ -61,7 +60,7 @@ if __FILE__ == $0
 			title = gif_res[:record]['source_resource']['title'].split[0...5].join(' ')
 			title << "..."
 			link = "http://dp.la/item/" << gif_res[:_id]
-			text = "#{title} from #{link}"
+			text = "Searched: #{$searchterm}. Got: #{title} from #{link}"
 			post = Twitter::post_content(text, gif_res[:gif])
 			#add information brought back from twitter
 			gif_res[:twitter_post_id] = post.id
