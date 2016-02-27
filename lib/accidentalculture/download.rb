@@ -45,18 +45,16 @@ module Download
 					puts "DOWNLOADING: #{url}"
 					begin
 						dl = open(url, :allow_redirections => :all)
-						ct = dl.content_type #if this is wrong on the server, it will be wrong here.
-						puts "#{url} is #{ct}" #for testing
-			  			f << dl.read
-			  			#also save metadata for file, so we can retrieve later
-			  			md = path<<".json"
-			  			open(md, 'wb') do |m|
-			  				m.write(v.to_json)
-			  			end
-			  		rescue OpenURI::HTTPError => ex
-			  			puts "Oops #{ex}"
-			  			File.delete(path)
-			  		end
+		  			f << dl.read
+		  			#also save metadata for file, so we can retrieve later
+		  			md = path<<".json"
+		  			open(md, 'wb') do |m|
+		  				m.write(v.to_json)
+		  			end
+		  		rescue OpenURI::HTTPError => ex
+		  			puts "Oops #{ex}"
+		  			File.delete(path)
+		  		end
 				end
 			end
 		rescue Timeout::Error
@@ -112,8 +110,7 @@ module Download
 		url = v[:original_url]
 		puts "TRYING TO GET srcUrl for #{url}"
 		browser_options = {:js_errors => false, 
-											 :timeout => 60, 
-											 :phantomjs_options => ['--ignore-ssl-errors=yes'] #maybe ill advised, but directed at issue: #3
+											 :timeout => 60
 											}
 		Capybara.register_driver :poltergeist do |app|
 			Capybara::Poltergeist::Driver.new(app, browser_options)
@@ -123,7 +120,7 @@ module Download
 		session.visit url
 		page = Nokogiri::HTML(session.html) #allowing all redirs is risky, but since we know where we are getting stuff from, it's okay for now.
 		srcUrl = page.css(v[:dl_info][:path]).first[v[:dl_info][:sel]]
-		if !srcUrl.nil
+		if !srcUrl.nil?
 			download srcUrl, file_id, v
 		else
 			puts "url is empty for #{v[:dpla_id]}, probably because attempt to get resource was botched. skipping."

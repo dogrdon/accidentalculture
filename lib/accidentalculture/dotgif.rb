@@ -10,6 +10,7 @@ require ENV["HOME"]+'/accidentalculture/etc/conf/mongo_conf'
 
 module DotGif
   def self.search_and_deploy
+    puts "I AM STARTING TO MAKE THE GIF"
     storage = Store::MongoStore.new(MONGO_CONF[:host], MONGO_CONF[:port], MONGO_CONF[:database], MONGO_CONF[:collection])
     videopath = ENV["HOME"]+"/accidentalculture/tmp_v/"
     jsonpath = videopath + "*.json"
@@ -17,6 +18,7 @@ module DotGif
     default_gif_len = "2" #2 seconds for the gif
   	#find one in tmp_v(based on score?)
     gifoptions = Hash.new
+    
     Dir.glob(jsonpath) do |f|
       d = File.open(f).read
       j = JSON.parse(d)
@@ -26,23 +28,31 @@ module DotGif
     end
 
     winner = gifoptions.max_by{|k,v| v}[0]
-    
+
     #if winner alread in db, delete that from tmp_v and 
     #run search_and_deploy again. if nothing left, return nil.
-    #if storage.checkpost(winner) 
-    #  gifoptions.delete(winner)
-    #  if gifoptions.length == 0
-    #    result = nil
-    #    return result
-    #  else
-    #    winner = gifoptions.max_by{|k,v| v}[0]
-    #  end
-    #end
-
+    puts "Checking if #{winner} already in db..."
+    begin
+      if storage.checkpost(winner)
+        puts "#{winner} is already in there" 
+        gifoptions.delete(winner)
+        if gifoptions.length == 0
+          result = nil
+          return result
+        else
+          winner = gifoptions.max_by{|k,v| v}[0]
+        end
+      end
+    rescue => e
+      puts "this happened to your check: #{e}"
+    end
 
     winnerpath = "#{videopath}#{winner}"
-    video = FFMPEG::Movie.new(winnerpath)
-
+    begin
+      video = FFMPEG::Movie.new(winnerpath)
+    rescue => e
+      puts "You got an error of #{e}, do you even ffmpeg?"
+    end
     start = video.duration/2
     start = start.to_i.to_s
 
