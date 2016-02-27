@@ -3,10 +3,10 @@
 conf/
 /test/tmp/
 /test/version_tmp/
-/tmp*/
+tmp_*/*
 *.gz
 data/all_*.json
-gifs/
+gifs/*
 
 ## Environment normalization:
 /.bundle/

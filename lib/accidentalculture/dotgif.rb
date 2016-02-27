@@ -29,15 +29,15 @@ module DotGif
     
     #if winner alread in db, delete that from tmp_v and 
     #run search_and_deploy again. if nothing left, return nil.
-    if storage.checkpost(winner) 
-      gifoptions.delete(winner)
-      if gifoptions.length == 0
-        result = nil
-        return result
-      else
-        winner = gifoptions.max_by{|k,v| v}[0]
-      end
-    end
+    #if storage.checkpost(winner) 
+    #  gifoptions.delete(winner)
+    #  if gifoptions.length == 0
+    #    result = nil
+    #    return result
+    #  else
+    #    winner = gifoptions.max_by{|k,v| v}[0]
+    #  end
+    #end
 
 
     winnerpath = "#{videopath}#{winner}"

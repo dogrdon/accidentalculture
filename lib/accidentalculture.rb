@@ -10,6 +10,7 @@ require_relative 'accidentalculture/store'
 require_relative '../etc/conf/api_keys'
 require_relative '../etc/conf/mongo_conf'
 
+
 if __FILE__ == $0
 
 	$video_dir = '../tmp_v/*'
@@ -36,14 +37,8 @@ if __FILE__ == $0
 			get_results
 		else
 			puts "Starting to download..."
-			begin
-				timeout(45) do
-					dl_result = video_results.length > 5 ? video_results.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
-				end
-			rescue Timeout::Error
-				puts "Starting download is taking too long, retrying new process"
-				get_results
-			end
+			
+			dl_result = video_results.length > 5 ? video_results.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
 			
 			if dl_result.length == 0
 				get_results
