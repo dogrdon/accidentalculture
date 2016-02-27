@@ -59,7 +59,11 @@ if __FILE__ == $0
 				title = gif_res[:record]['source_resource']['title'].split[0...5].join(' ')
 				title << "..."
 				link = "http://dp.la/item/" << gif_res[:_id]
-				text = "Searched: #{$searchterm}. Got: #{title} from #{link}"
+				if !$searchterm.nil?
+					text = "Searched: #{$searchterm}. Got: #{title} from #{link}"
+				else
+					text = "#{title} from #{link}"
+				end
 				post = Twitter::post_content(text, gif_res[:gif])
 				#add information brought back from twitter
 				gif_res[:twitter_post_id] = post.id
