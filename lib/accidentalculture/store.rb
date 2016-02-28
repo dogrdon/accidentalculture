@@ -17,7 +17,7 @@ module Store
     end
 
     def checkpost(gif_id)
-      res = @mongo_client[@coll].find(:gif=>gif_id).entries.length > 0
+      res = @mongo_client[@coll].find(:_id=>gif_id).entries.length > 0
       return res
     end
   end

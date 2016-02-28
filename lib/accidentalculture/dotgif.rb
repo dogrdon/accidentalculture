@@ -26,7 +26,7 @@ module DotGif
       dpla = j['dpla_id']
       gifoptions[dpla] = score
     end
-
+    puts gifoptions
     winner = gifoptions.max_by{|k,v| v}[0]
 
     #if winner alread in db, delete that from tmp_v and 
