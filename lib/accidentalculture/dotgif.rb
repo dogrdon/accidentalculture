@@ -38,6 +38,7 @@ module DotGif
         gifoptions.delete(winner)
         if gifoptions.length == 0
           result = nil
+          puts "we tried, but there is only one video for this search and it has already been used."
           return result
         else
           winner = gifoptions.max_by{|k,v| v}[0]

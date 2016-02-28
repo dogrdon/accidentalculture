@@ -71,6 +71,8 @@ if __FILE__ == $0
 				post = Twitter::post_content(text, gif_res[:gif])
 				#add information brought back from twitter
 				gif_res[:twitter_post_id] = post.id
+				#add the search term, too
+				gif_res[:search_term] = $searchterm
 				#save this to mongo
 				begin
 					storage = Store::MongoStore.new(MONGO_CONF[:host], MONGO_CONF[:port], MONGO_CONF[:database], MONGO_CONF[:collection])
