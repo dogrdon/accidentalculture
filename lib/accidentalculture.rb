@@ -56,7 +56,11 @@ if __FILE__ == $0
 
 			#with info returned from gif, pass to twitter
 			if gif_res.class == Hash
-				title = gif_res[:record]['source_resource']['title'].split[0...5].join(' ')
+				title = gif_res[:record]['source_resource']['title']
+				if title.class == Array
+					title = title[0]
+				end
+				title = title.split[0...5].join(' ')
 				title << "..."
 				link = "http://dp.la/item/" << gif_res[:_id]
 				if !$searchterm.nil?
