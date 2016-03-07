@@ -68,6 +68,13 @@ if __FILE__ == $0
 				else
 					text = "#{title} from #{link}"
 				end
+
+				#hacky way to psuedo randomly send post to @vidglitch sometimes
+				rnum = rand(1..5)
+				if rnum == 3
+					text << "@vidglitch"
+				end
+
 				post = Twitter::post_content(text, gif_res[:gif])
 				#add information brought back from twitter
 				gif_res[:twitter_post_id] = post.id
