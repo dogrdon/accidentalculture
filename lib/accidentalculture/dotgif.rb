@@ -15,7 +15,7 @@ module DotGif
     videopath = ENV["HOME"]+"/accidentalculture/tmp_v/"
     jsonpath = videopath + "*.json"
     gifpath = ENV["HOME"]+"/accidentalculture/gifs/"
-    default_gif_len = "2" #2 seconds for the gif
+    default_gif_len = "3" # how many seconds for the gif
   	#find one in tmp_v(based on score?)
     gifoptions = Hash.new
     
