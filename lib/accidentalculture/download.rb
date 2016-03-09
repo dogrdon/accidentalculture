@@ -46,6 +46,8 @@ module Download
 					begin
 						dl = open(url, :allow_redirections => :all)
 		  			f << dl.read
+		  			#save download url to json
+		  			v[:dl_url] = url
 		  			#also save metadata for file, so we can retrieve later
 		  			md = path<<".json"
 		  			open(md, 'wb') do |m|
