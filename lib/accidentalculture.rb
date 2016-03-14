@@ -72,7 +72,7 @@ if __FILE__ == $0
 				#hacky way to psuedo randomly send post to @vidglitch sometimes
 				rnum = rand(1..5)
 				if rnum == 3
-					text << "@vidglitch"
+					text << " @vidglitch"
 				end
 
 				post = Twitter::post_content(text, gif_res[:gif])
