@@ -57,9 +57,14 @@ if __FILE__ == $0
 			#with info returned from gif, pass to twitter
 			if gif_res.class == Hash
 				title = gif_res[:record]['source_resource']['title']
+
+				#lets mark as sensitive media if nudity, unfortunately
+				sensitive = title.downcase.include?("nude") ? true : false
+
 				if title.class == Array
 					title = title[0]
 				end
+
 				title = title.split[0...5].join(' ')
 				title << "..."
 				link = "http://dp.la/item/" << gif_res[:_id]
@@ -70,12 +75,12 @@ if __FILE__ == $0
 				end
 
 				#hacky way to psuedo randomly send post to @vidglitch sometimes
-				rnum = rand(1..5)
+				rnum = rand(1..8)
 				if rnum == 3
 					text << " @vidglitch"
 				end
 
-				post = Twitter::post_content(text, gif_res[:gif])
+				post = Twitter::post_content(text, gif_res[:gif], sensitive)
 				#add information brought back from twitter
 				gif_res[:twitter_post_id] = post.id
 				#add the search term, too
