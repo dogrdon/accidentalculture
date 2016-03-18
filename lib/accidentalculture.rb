@@ -37,7 +37,7 @@ if __FILE__ == $0
 			get_results
 		else
 			puts "Starting to download..."			
-			dl_result = video_results.length > 5 ? video_results.take(3).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
+			dl_result = video_results.length > 5 ? video_results.take(4).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
 			
 			if dl_result.length == 0
 				get_results
@@ -58,12 +58,12 @@ if __FILE__ == $0
 			if gif_res.class == Hash
 				title = gif_res[:record]['source_resource']['title']
 
-				#lets mark as sensitive media if nudity, unfortunately
-				sensitive = title.downcase.include?("nude") ? true : false
-
 				if title.class == Array
 					title = title[0]
 				end
+
+				#lets mark as sensitive media if nudity, unfortunately
+				sensitive = title.downcase.include?("nude") ? true : false
 
 				title = title.split[0...5].join(' ')
 				title << "..."
