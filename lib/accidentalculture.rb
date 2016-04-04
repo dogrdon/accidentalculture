@@ -75,7 +75,7 @@ if __FILE__ == $0
 				end
 
 				#hacky way to psuedo randomly send post to @vidglitch sometimes
-				rnum = rand(1..8)
+				rnum = rand(1..10)
 				if rnum == 3
 					text << " @vidglitch"
 				end
