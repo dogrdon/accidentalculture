@@ -6,6 +6,7 @@
 
 require 'nokogiri'
 require 'capybara/poltergeist'	
+require 'phantomjs'
 require 'timeout'
 require 'open-uri'
 require 'open_uri_redirections'
@@ -111,9 +112,7 @@ module Download
 	def self.getSrc(v, file_id) 
 		url = v[:original_url]
 		puts "TRYING TO GET srcUrl for #{url}"
-		browser_options = {:js_errors => false, 
-											 :timeout => 60
-											}
+		browser_options = {:js_errors => false, :timeout => 120, :phantomjs => Phantomjs.path}
 		Capybara.register_driver :poltergeist do |app|
 			Capybara::Poltergeist::Driver.new(app, browser_options)
 		end
