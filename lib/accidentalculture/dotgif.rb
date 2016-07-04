@@ -9,6 +9,18 @@ require 'json'
 require ENV["HOME"]+'/accidentalculture/etc/conf/mongo_conf'
 
 module DotGif
+
+  def self.pick_start(duration)
+    if duration <= 3
+      start = 0
+    else
+      last = duration - 3
+      start = rand(0..last)
+    end
+
+    return start.to_i.to_s
+  end
+
   def self.search_and_deploy
     puts "I AM STARTING TO MAKE THE GIF"
     storage = Store::MongoStore.new(MONGO_CONF[:host], MONGO_CONF[:port], MONGO_CONF[:database], MONGO_CONF[:collection])
@@ -16,7 +28,6 @@ module DotGif
     jsonpath = videopath + "*.json"
     gifpath = ENV["HOME"]+"/accidentalculture/gifs/"
     default_gif_len = "3" # how many seconds for the gif
-  	#find one in tmp_v(based on score?)
     gifoptions = Hash.new
     
     Dir.glob(jsonpath) do |f|
@@ -53,8 +64,7 @@ module DotGif
     rescue => e
       puts "You got an error of #{e}, do you even ffmpeg?"
     end
-    start = video.duration/2
-    start = start.to_i.to_s
+    start = pick_start(video.duration)
 
   	#filname is dpla_id+ss+t.gif
     giffile = "#{winner}_#{start}_#{default_gif_len}.gif"
