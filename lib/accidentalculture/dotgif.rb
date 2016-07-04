@@ -37,6 +37,7 @@ module DotGif
       dpla = j['dpla_id']
       gifoptions[dpla] = score
     end
+
     winner = gifoptions.max_by{|k,v| v}[0]
 
     #if winner alread in db, delete that from tmp_v and 
@@ -47,7 +48,7 @@ module DotGif
         puts "#{winner} is already in there" 
         gifoptions.delete(winner)
         if gifoptions.length == 0
-          result = nil
+          result, winner = nil
           puts "we tried, but there is only one video for this search and it has already been used."
           return result
         else
@@ -58,32 +59,34 @@ module DotGif
       puts "this happened to your check: #{e}"
     end
 
-    winnerpath = "#{videopath}#{winner}"
-    begin
-      video = FFMPEG::Movie.new(winnerpath)
-    rescue => e
-      puts "You got an error of #{e}, do you even ffmpeg?"
-    end
-    start = pick_start(video.duration)
+    if !winner.nil?
+      winnerpath = "#{videopath}#{winner}"
+      begin
+        video = FFMPEG::Movie.new(winnerpath)
+      rescue => e
+        puts "You got an error of #{e}, do you even ffmpeg?"
+      end
+      start = pick_start(video.duration)
 
-  	#filname is dpla_id+ss+t.gif
-    giffile = "#{winner}_#{start}_#{default_gif_len}.gif"
-    gifdest = "#{gifpath}#{giffile}" 
+    	#filname is dpla_id+ss+t.gif
+      giffile = "#{winner}_#{start}_#{default_gif_len}.gif"
+      gifdest = "#{gifpath}#{giffile}" 
 
-    transcode_options = {frame_rate: 15, resolution: "320x240", video_bitrate: 300, custom: "-ss #{start} -t #{default_gif_len}"}
+      transcode_options = {frame_rate: 15, resolution: "320x240", video_bitrate: 300, custom: "-ss #{start} -t #{default_gif_len}"}
 
-    #TODO need error checking, can't do it like this ultimately
-    puts "TRANSCODING NOW"
-    transcoded = video.transcode(gifdest, transcode_options)
-    puts "TRANSCODING COMPLETE"
-    #return the id of winner, gif_file to the main
-    record_path = "#{winner}.json"
-    begin 
-      puts "PACKING UP METADATA FOR WRAPPING UP."
-      result = {_id: winner, gif: giffile, record: JSON.parse(File.open("#{videopath}#{record_path}").read)}
-    rescue => e
-      puts "Error packing up result: #{e}"
-      result = nil
+      #TODO need error checking, can't do it like this ultimately
+      puts "TRANSCODING NOW"
+      transcoded = video.transcode(gifdest, transcode_options)
+      puts "TRANSCODING COMPLETE"
+      #return the id of winner, gif_file to the main
+      record_path = "#{winner}.json"
+      begin 
+        puts "PACKING UP METADATA FOR WRAPPING UP."
+        result = {_id: winner, gif: giffile, record: JSON.parse(File.open("#{videopath}#{record_path}").read)}
+      rescue => e
+        puts "Error packing up result: #{e}"
+        result = nil
+      end
     end
     return result
 
