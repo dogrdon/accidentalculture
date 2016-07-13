@@ -66,7 +66,8 @@ module DotGif
       rescue => e
         puts "You got an error of #{e}, do you even ffmpeg?"
       end
-      start = pick_start(video.duration)
+      duration = video.duration
+      start = pick_start(duration)
 
     	#filname is dpla_id+ss+t.gif
       giffile = "#{winner}_#{start}_#{default_gif_len}.gif"
@@ -82,7 +83,7 @@ module DotGif
       record_path = "#{winner}.json"
       begin 
         puts "PACKING UP METADATA FOR WRAPPING UP."
-        result = {_id: winner, gif: giffile, record: JSON.parse(File.open("#{videopath}#{record_path}").read)}
+        result = {_id: winner, gif: giffile, video_duration: duration, record: JSON.parse(File.open("#{videopath}#{record_path}").read)}
       rescue => e
         puts "Error packing up result: #{e}"
         result = nil

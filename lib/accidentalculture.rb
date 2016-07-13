@@ -82,7 +82,7 @@ if __FILE__ == $0
 				end
 
 				post = Twitter::post_content(text, gif_res[:gif], sensitive)
-				#add information brought back from twitter
+				#add information brought back from twitter to the record we are saving
 				gif_res[:twitter_post_id] = post.id
 				#add the search term, too
 				gif_res[:search_term] = $searchterm
