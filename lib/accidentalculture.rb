@@ -23,14 +23,19 @@ if __FILE__ == $0
 	end
 
 	def get_results
-		$searchterm = Word::get_word
+		if ARGV.empty?
+			$searchterm = Word::get_word
+		else
+			$searchterm = ARGV[0]
+		end
+
 		puts "search term is #{$searchterm}"
-		itemlimit = 25
+		itemlimit = 50
 		#set up for api, search
 		__APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS[:dpla]}&%s"}
 		c = Search::Client.new(__APIS__[:dpla])
 		video_results = Clean::clean_results c.search($searchterm, '"moving image"', 'items', itemlimit)
-		#here, video (and audio, soon) should be a list of potential sources with their relevant metadata
+		#here, video should be a list of potential sources with their relevant metadata
 		#so depending on which document.dl_info.type it has, go get the video
 		if video_results.nil?
 			puts "Sorry, after much consideration of your request, there are no viable downloads for #{$searchterm}"
