@@ -67,7 +67,7 @@ if __FILE__ == $0
 
 				title = title.split[0...5].join(' ')
 				title << "..."
-     respath = gif_res[:_id].split('_')[0]
+				respath = gif_res[:_id].split('_')[0]
 				link = "http://dp.la/item/" << respath
 				if !$searchterm.nil?
 					text = "Searched: #{$searchterm}. Got: #{title} from #{link}"
