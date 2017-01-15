@@ -8,6 +8,7 @@ tmp_*/*
 data/all_*.json
 gifs/*
 Gemfile.lock
+*DS_Store
 
 ## Environment normalization:
 /.bundle/

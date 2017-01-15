@@ -42,18 +42,32 @@ module DotGif
 
     #if winner alread in db, delete that from tmp_v and 
     #run search_and_deploy again. if nothing left, return nil.
-    puts "Checking if #{winner} already in db..."
+    #puts "Checking if #{winner} already in db..."
+    #begin
+    #  if storage.checkpost(winner)
+    #    puts "#{winner} is already in there" 
+    #    gifoptions.delete(winner)
+    #    if gifoptions.length == 0
+    #      result, winner = nil
+    #      puts "we tried, but there is only one video for this search and it has already been used."
+    #      return result
+    #    else
+    #      winner = gifoptions.max_by{|k,v| v}[0]
+    #    end
+    #  end
+    #rescue => e
+    #  puts "this happened to your check: #{e}"
+    #end
+
+    # trying without checking the db
+    # shaking it up so much, should rarely get repeats
     begin
-      if storage.checkpost(winner)
-        puts "#{winner} is already in there" 
-        gifoptions.delete(winner)
-        if gifoptions.length == 0
-          result, winner = nil
-          puts "we tried, but there is only one video for this search and it has already been used."
-          return result
-        else
-          winner = gifoptions.max_by{|k,v| v}[0]
-        end
+      if gifoptions.length == 0
+        result, winner = nil
+        puts "we tried, but there is only one video for this search and it has already been used."
+        return result
+      else
+        winner = gifoptions.max_by{|k,v| v}[0]
       end
     rescue => e
       puts "this happened to your check: #{e}"

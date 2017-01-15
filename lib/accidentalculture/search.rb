@@ -22,7 +22,6 @@ module Search
 		def search(term, format, type='items', limit=25)
 			@type = type
 			@params_hash = Hash.new
-			#we're not necessarily going to know which params we can use here in future
 			@params_hash['q'] = term
 			@params_hash['sourceResource.type'] = format
 			@params_hash['page_size'] = limit.to_s
