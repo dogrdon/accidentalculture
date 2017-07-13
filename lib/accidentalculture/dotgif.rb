@@ -6,9 +6,18 @@
 
 require 'streamio-ffmpeg'
 require 'json'
+require 'aws-sdk'
 require ENV["HOME"]+'/accidentalculture/etc/conf/mongo_conf'
+require ENV["HOME"]+'/accidentalculture/etc/conf/aws_conf'
+
 
 module DotGif
+
+  AWS_S3 = Aws::S3::Resource.new(
+  region: AWS_CONF[:region],
+  access_key_id: AWS_CONF[:access_key_id],
+  secret_access_key: AWS_CONF[:secret_access_key]
+  )
 
   def self.pick_start(duration)
     if duration <= 3
@@ -94,6 +103,10 @@ module DotGif
       puts "TRANSCODING NOW"
       transcoded = video.transcode(gifdest, transcode_options)
       puts "TRANSCODING COMPLETE"
+      puts "SAVING TO AWS S3..."
+      obj = AWS_S3.bucket('dpladotgif').object(giffile)
+      obj.upload_file(gifdest)
+      
       #return the id of winner, gif_file to the main
       record_path = "#{winner}.json"
       begin 
