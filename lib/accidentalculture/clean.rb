@@ -14,7 +14,7 @@ module Clean
 	$VPATHS = {
 		"http://dp.la/api/contributor/georgia" => {:type => "getUrl", :hosts => ["dlg.galileo.usg.edu"], :f4vpath => "http://dlgmedia1-www.galib.uga.edu/wsbn-f4v/%s.f4v", :mp4path => "http://dlgmedia1-www.galib.uga.edu/gfc/mp4/%s.mp4"}, 
 		"http://dp.la/api/contributor/usc" => {:type => "getCDM", :hosts => ["digitallibrary.usc.edu"], :path => nil},
-		"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :hosts => ["research.archives.gov"], :path => "a#downloadVideoAudio", :sel => "href"},
+		"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :hosts => ["research.archives.gov", "catalog.archives.gov"], :path => "a#downloadVideoAudio", :sel => "href"},
 		"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :hosts => ["digital.lib.ecu.edu"], :path =>  "video source[type='video/mp4']", :sel =>"href"},
 		"http://dp.la/api/contributor/washington" => {:type => "getCDM", :hosts => ["cdm16786.contentdm.oclc.org"], :path =>  nil}
 	}
