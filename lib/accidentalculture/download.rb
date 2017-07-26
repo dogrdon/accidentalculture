@@ -90,23 +90,29 @@ module Download
 		end
 	end
 
-	def self.getYT(v, file_id)
-		#downloader for YouTube videos with a Youtube url
-		yt_url = v[:original_url]
+	def self.getCDL(v, file_id)
+		#downloader for YouTube videos with a Youtube url or videos from archive.org
+		cdl_url = v[:original_url]
 		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{file_id}"
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
-		begin
-			timeout(40) do
-				puts "DOWNLOADING: #{url}"
-				begin
-					YoutubeDL.download yt_url, output: path
-				rescue => error
-					puts "Something went wrong downloading from YouTube, and it was: #{error}"
+		if cdl_url.include("youtube.com")
+			begin
+				timeout(40) do
+					puts "DOWNLOADING: #{cdl_url}"
+					begin
+						YoutubeDL.download cdl_url, output: path
+					rescue => error
+						puts "Something went wrong downloading from YouTube, and it was: #{error}"
+					end
 				end
+			rescue Timeout::Error
+				puts "#{url} is taking too long, probably way to large for our needs"
+				File.delete(path)
 			end
-		rescue Timeout::Error
-			puts "#{url} is taking too long, probably way to large for our needs"
-			File.delete(path)
+		else
+			archive_id = cdl_url.split('/').last
+			dl_url = 'https://archive.org/download/#{archive_id}/#{archive_id}_access.mp4'
+			download dl_url, file_id, v
 		end
 	end
 
