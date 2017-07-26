@@ -11,6 +11,7 @@ require 'timeout'
 require 'open-uri'
 require 'open_uri_redirections'
 require 'json'
+require 'youtube-dl.rb'
 
 
 module Download
@@ -89,6 +90,27 @@ module Download
 		end
 	end
 
+	def self.getYT(v, file_id)
+		#downloader for YouTube videos with a Youtube url
+		yt_url = v[:original_url]
+		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{file_id}"
+		#use timeout to cut of extra long downloads (over 30 sec is too much)
+		begin
+			timeout(40) do
+				puts "DOWNLOADING: #{url}"
+				begin
+					YoutubeDL.download yt_url, output: path
+				rescue => error
+					puts "Something went wrong downloading from YouTube, and it was: #{error}"
+				end
+			end
+		rescue Timeout::Error
+			puts "#{url} is taking too long, probably way to large for our needs"
+			File.delete(path)
+		end
+	end
+
+
 	def self.handleUrlShortcut(sc)
 		#sometimes you are given back a url shortcut text file, parse this to see if blank or has location
 		f = sc.lines
@@ -96,7 +118,6 @@ module Download
 	end
 
 	def self.getCDM(v, file_id)
-
 		#need to check if there is actually a video downloaded or a url shortcut file (and parse the latter)
 		ourl = v[:original_url].sub('cdm/ref', 'utils/getstream')
 		proceed = checkHeaders ourl

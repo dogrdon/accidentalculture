@@ -16,7 +16,8 @@ module Clean
 		"http://dp.la/api/contributor/usc" => {:type => "getCDM", :hosts => ["digitallibrary.usc.edu"], :path => nil},
 		"http://dp.la/api/contributor/nara"	   => {:type => "getSrc", :hosts => ["research.archives.gov", "catalog.archives.gov"], :path => "a#downloadVideoAudio", :sel => "href"},
 		"http://dp.la/api/contributor/digitalnc" => {:type => "getSrc", :hosts => ["digital.lib.ecu.edu"], :path =>  "video source[type='video/mp4']", :sel =>"href"},
-		"http://dp.la/api/contributor/washington" => {:type => "getCDM", :hosts => ["cdm16786.contentdm.oclc.org"], :path =>  nil}
+		"http://dp.la/api/contributor/washington" => {:type => "getCDM", :hosts => ["cdm16786.contentdm.oclc.org"], :path =>  nil},
+		"http://dp.la/api/contributor/cdl" => {:type => "getYT", :hosts => ["www.youtube.com"], :path => nil}
 	}
 
 	def self.check_result(d)
