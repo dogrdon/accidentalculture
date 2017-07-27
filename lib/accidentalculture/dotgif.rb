@@ -47,9 +47,13 @@ module DotGif
       gifoptions[dpla] = score
     end
 
-    puts 'gif options are: #{gifoptions}'
-    winner = gifoptions.max_by{|k,v| v}[0]
-    puts 'the winner is #{winner}'
+    puts "gif options are: #{gifoptions}"
+    if !gifoptions.empty?
+      winner = gifoptions.max_by{|k,v| v}[0]
+    end
+    if !winner.nil?
+      puts "the winner is #{winner}"
+    end
 
     # trying without checking the db
     # shaking it up so much, should rarely get repeats

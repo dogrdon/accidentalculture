@@ -95,15 +95,16 @@ module Download
 		cdl_url = v[:original_url]
 		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{file_id}"
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
-		if cdl_url.include("youtube.com")
+		if cdl_url.include?("youtube.com")
 			begin
 				timeout(40) do
 					puts "DOWNLOADING: #{cdl_url}"
 					begin
-						md = path<<".json"
+						md = path+".json"
 		  				open(md, 'wb') do |m| 
 		  					m.write(v.to_json) #make sure the json file gets to the right spot
 						end
+						puts "i am downloading #{cdl_url} to #{path}"
 						YoutubeDL.download cdl_url, output: path
 					rescue => error
 						puts "Something went wrong downloading from YouTube, and it was: #{error}"
@@ -115,7 +116,7 @@ module Download
 			end
 		else
 			archive_id = cdl_url.split('/').last
-			dl_url = 'https://archive.org/download/#{archive_id}/#{archive_id}_access.mp4'
+			dl_url = "https://archive.org/download/#{archive_id}/#{archive_id}_access.mp4"
 			download dl_url, file_id, v
 		end
 	end
