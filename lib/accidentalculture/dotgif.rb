@@ -47,14 +47,16 @@ module DotGif
       gifoptions[dpla] = score
     end
 
+    puts 'gif options are: #{gifoptions}'
     winner = gifoptions.max_by{|k,v| v}[0]
+    puts 'the winner is #{winner}'
 
     # trying without checking the db
     # shaking it up so much, should rarely get repeats
     begin
       if gifoptions.length == 0
         result, winner = nil
-        puts "we tried, but there is only one video for this search and it has already been used."
+        puts "we tried, but there are not videos for this search."
         return result
       else
         winner = gifoptions.max_by{|k,v| v}[0]
