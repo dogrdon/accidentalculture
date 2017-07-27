@@ -31,13 +31,13 @@ module Clean
 			if $VPATHS[provider][:hosts].include?(host)
 				r = Hash.new
 				r = {
-						:provider_id => d['provider']['@id'], 
-						:provider_name => d['provider']['name'],
-						:dl_info => $VPATHS[d['provider']['@id']],
-						:source_resource => d['sourceResource'],
-						:dpla_id => d['id'],
-						:original_url => d['isShownAt'], 
-						:score => d['score']
+					:provider_id => d['provider']['@id'], 
+					:provider_name => d['provider']['name'],
+					:dl_info => $VPATHS[d['provider']['@id']],
+					:source_resource => d['sourceResource'],
+					:dpla_id => d['id'],
+					:original_url => d['isShownAt'], 
+					:score => d['score']
 				}
 				return r
 			else
@@ -58,7 +58,6 @@ module Clean
 			docs = data['docs']
 			results = Array.new
 			docs.each do |d|
-				
 				result = check_result d
 				#looks bad to ignore rights, but currently not allowing any providers that are 
 				#very stringent about not reusing the material, unrestricted only referes to nara.

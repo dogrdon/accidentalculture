@@ -100,6 +100,9 @@ module Download
 				timeout(40) do
 					puts "DOWNLOADING: #{cdl_url}"
 					begin
+						md = path<<".json"
+		  				open(md, 'wb') do |m| 
+		  					m.write(v.to_json) #make sure the json file gets to the right spot
 						YoutubeDL.download cdl_url, output: path
 					rescue => error
 						puts "Something went wrong downloading from YouTube, and it was: #{error}"
