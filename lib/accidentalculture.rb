@@ -51,7 +51,7 @@ if __FILE__ == $0
 	end
 
 	begin
-		Timeout.timeout(180) do
+		Timeout.timeout(240) do
 			while Dir[$video_dir].empty?
 				get_results
 			end

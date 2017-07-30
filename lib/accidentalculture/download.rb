@@ -42,7 +42,7 @@ module Download
 		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{someid}"
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		begin
-			timeout(40) do
+			timeout(60) do
 				open(path, 'wb') do |f|
 					puts "DOWNLOADING: #{url}"
 					begin
@@ -51,19 +51,21 @@ module Download
 		  			#save download url to json
 		  			v[:dl_url] = url
 		  			#also save metadata for file, so we can retrieve later
-		  			md = path<<".json"
+		  			md = path+".json"
 		  			open(md, 'wb') do |m|
 		  				m.write(v.to_json)
 		  			end
 		  		rescue OpenURI::HTTPError => ex
 		  			puts "Oops #{ex}"
 		  			File.delete(path)
+		  			File.delete(md)
 		  		end
 				end
 			end
 		rescue Timeout::Error
 			puts "#{url} is taking too long, probably way to large for our needs"
 			File.delete(path)
+			File.delete(md)
 		end
 	end
 
@@ -97,7 +99,7 @@ module Download
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		if cdl_url.include?("youtube.com")
 			begin
-				timeout(40) do
+				timeout(60) do
 					puts "DOWNLOADING: #{cdl_url}"
 					begin
 						md = path+".json"
@@ -108,11 +110,14 @@ module Download
 						YoutubeDL.download cdl_url, output: path
 					rescue => error
 						puts "Something went wrong downloading from YouTube, and it was: #{error}"
+						File.delete(path)
+						File.delete(md)
 					end
 				end
 			rescue Timeout::Error
-				puts "#{url} is taking too long, probably way to large for our needs"
+				puts "#{cdl_url} is taking too long, probably way to large for our needs"
 				File.delete(path)
+				File.delete(md)
 			end
 		else
 			archive_id = cdl_url.split('/').last
