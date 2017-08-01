@@ -45,8 +45,8 @@ module Download
 			timeout(60) do
 				if url.include?('youtube.com')
 					begin
-						options = {rate_limit: '50K',format: :worst}	
-						YoutubeDL.download url, options, output: path
+						options = {output: path, format: :worst}	
+						YoutubeDL.download url, options
 					rescue => error
 						puts "Error downloading youtube video #{error}"
 						# figure out what's going on with the path
