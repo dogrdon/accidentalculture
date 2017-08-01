@@ -40,6 +40,13 @@ module Download
 
 	def self.download(url, someid, v)
 		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{someid}"
+		#save download url to json
+		v[:dl_url] = url
+		#also save metadata for file, so we can retrieve later
+		md = path+".json"
+		open(md, 'wb') do |m|
+			m.write(v.to_json)
+		end
 		#use timeout to cut of extra long downloads (over 30 sec is too much)
 		begin
 			timeout(60) do
@@ -67,13 +74,6 @@ module Download
 			  			f << dl.read
 			  		end
 			  	end
-	  			#save download url to json
-	  			v[:dl_url] = url
-	  			#also save metadata for file, so we can retrieve later
-	  			md = path+".json"
-	  			open(md, 'wb') do |m|
-	  				m.write(v.to_json)
-		  		end
 			end
 		rescue Timeout::Error
 			puts "#{url} is taking too long, probably way too large for our needs"
