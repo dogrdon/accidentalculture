@@ -30,7 +30,7 @@ if __FILE__ == $0
 		end
 
 		puts "search term is #{$searchterm}"
-		itemlimit = 50
+		itemlimit = 100
 		#set up for api, search
 		__APIS__ = {:dpla=>"http://api.dp.la/v2/%s?api_key=#{API_KEYS[:dpla]}&%s"}
 		c = Search::Client.new(__APIS__[:dpla])
@@ -42,7 +42,7 @@ if __FILE__ == $0
 			get_results
 		else
 			puts "Starting to download..."			
-			dl_result = video_results.length > 5 ? video_results.shuffle.take(5).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
+			dl_result = video_results.length > 8 ? video_results.shuffle.take(8).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
 			
 			if dl_result.length == 0
 				get_results
