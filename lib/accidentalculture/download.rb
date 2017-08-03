@@ -38,6 +38,18 @@ module Download
 		return status	
 	end
 
+	def self.checkWhichUrl(us)
+		us.each { |f|
+			res = open(f, :allow_redirections => :all)
+			status = res.status[0]
+			if status == '200'
+				return f
+			else
+				return nil
+			end
+		}
+	end
+
 	def self.download(url, someid, v)
 		path = ENV["HOME"]+"/accidentalculture/tmp_v/#{someid}"
 		#save download url to json
@@ -112,7 +124,13 @@ module Download
 		else
 			archive_id = cdl_url.split('/').last
 			dl_url = "https://archive.org/download/#{archive_id}/#{archive_id}_access.mp4"
-			download dl_url, file_id, v
+			hd_dl_url = "https://archive.org/download/#{archive_id}/#{archive_id}_access.HD.mp4"
+			archive_url = checkWhichUrl [dl_url, hd_dl_url]
+			if !archive_url.nil?
+				download archive_url, file_id, v
+			else
+				puts "tried to download this archive.org resource for #{file_id}, but could not find a useful url"
+			end
 		end
 	end
 
