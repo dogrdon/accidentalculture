@@ -39,15 +39,20 @@ module Download
 	end
 
 	def self.checkWhichUrl(us)
-		us.each { |f|
-			res = open(f, :allow_redirections => :all)
-			status = res.status[0]
-			if status == '200'
-				return f
+		ans = Array.new
+		us.each { |u|
+			begin
+				res = open(u, :allow_redirections => :all)
+			rescue OpenURI::HTTPError
+				status = nil
 			else
-				return nil
+				status = res.status[0]
+			end
+			if status == '200'
+				ans.push(u)
 			end
 		}
+		return ans[0]
 	end
 
 	def self.download(url, someid, v)
