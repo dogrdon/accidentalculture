@@ -42,7 +42,7 @@ if __FILE__ == $0
 			get_results
 		else
 			puts "Starting to download..."			
-			dl_result = video_results.length > 8 ? video_results.shuffle.take(8).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
+			dl_result = video_results.length > 6 ? video_results.shuffle.take(6).each{|v| Download::download_videos v} : video_results.each{|v| Download::download_videos v}
 			
 			if dl_result.length == 0
 				get_results
@@ -51,7 +51,7 @@ if __FILE__ == $0
 	end
 
 	begin
-		Timeout.timeout(240) do
+		Timeout.timeout(480) do
 			while Dir[$video_dir].empty?
 				get_results
 			end
