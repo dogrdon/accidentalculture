@@ -23,8 +23,8 @@ module DotGif
     if duration <= 3
       start = 0
     else
-      last = duration - 3
-      start = rand(0..last)
+      last = duration - 6
+      start = rand(3..last)
     end
 
     return start.to_i.to_s
