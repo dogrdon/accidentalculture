@@ -81,8 +81,8 @@ module DotGif
       start = pick_start(duration)
 
     	#filname is dpla_id+ss+t.gif
-      gifid = "#{winner}_#{start}"
-      giffile = "#{gifid}_#{default_gif_len}.gif"
+      gifid = "#{winner}_#{start}_#{default_gif_len}"
+      giffile = "#{gifid}.gif"
       gifdest = "#{gifpath}#{giffile}" 
 
       transcode_options = {frame_rate: 15, resolution: "320x240", video_bitrate: 300, custom: "-ss #{start} -t #{default_gif_len}"}
